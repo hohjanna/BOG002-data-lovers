@@ -1,0 +1,221 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.contendor {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+nav {
+    background: #000000;
+    padding: 5px 20px;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    color: #FFFFFF;
+}
+
+.menu li {
+    padding: 15px 20px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.menu li a {
+    display: block;
+}
+
+.button.principal {
+    border-bottom: 1px #444 solid;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    /*max-width: 60%;*/
+    position: absolute;
+    width: 602px;
+    height: 86px;
+    left: 120px;
+    top: 240px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 5vw;
+    line-height: 104px;
+    color: #FFFFFF;
+}
+
+p {
+    /*max-width: 60%;*/
+    position: absolute;
+    width: 601px;
+    height: 157px;
+    left: 121px;
+    top: 355px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: /*22px;*/
+    1.6vw;
+    line-height: 35px;
+    color: #FFFFFF;
+}
+
+#btnData {
+    position: absolute;
+    width: 271px;
+    height: 64px;
+    left: 117px;
+    top: 525px;
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid #000000;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 64px;
+    text-align: center;
+    color: #000000;
+    background: #FFF8F8;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    border-style: none;
+}
+
+#btnData:hover {
+    background: #06DAF6;
+}
+
+
+/* Menú mobile - Aquí se hace las 3 barras del menú hamburguesa */
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle {
+    order: 1;
+}
+
+.item.button {
+    order: 2;
+}
+
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+}
+
+.item.active {
+    display: block;
+}
+
+.toggle {
+    cursor: pointer;
+}
+
+.barsMenu {
+    background: #EAEAEA;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    width: 28px;
+    vertical-align: top;
+}
+
+.barsMenu::before,
+.barsMenu::after {
+    background: #EAEAEA;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: absolute;
+    width: 28px;
+}
+
+.barsMenu::before {
+    top: 8px;
+}
+
+.barsMenu::after {
+    top: -8px;
+}
+
+
+/* Opciones menú - Dispositivo Mobile */
+
+@media screen and (min-width:
+/*468px*/
+
+320px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    li {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        order: 1;
+    }
+    .item.button.principal {
+        background: transparent;
+        cursor: pointer;
+    }
+    .button.principal {
+        padding: 7px 30px;
+        background: teal;
+        border: 2px solid #06DAF6;
+        background: transparent;
+        border-radius: 9px;
+        cursor: pointer;
+    }
+    .button.principal:hover {
+        background: #06DAF6;
+    }
+}
+
+
+/* Dispositivo Tablet*/
+
+@media screen and (min-width: 768px) {
+    .item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+    }
+}
