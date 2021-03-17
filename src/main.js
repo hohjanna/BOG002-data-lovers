@@ -10,15 +10,90 @@ import data from './data/lol/lol.js';
 
 //obtener data con Fetch (API resquest)
 
-const apiUrl = './data/lol/lol.js';
+
+
+const apiUrl = './data/lol/lol.json';
 
 async function getData() {
     const response = await fetch(apiUrl);
-    const data = await response.text();
-    console.log(data);
+    const json = await response.json();
+    console.log(json);
 }
-
 getData();
 
 
-//Recorrer cada objeto de la data y pintarlo en el html
+
+
+
+
+
+/*function fetchData() {
+    fetch('./data/lol/lol.json')
+        .then(response => {
+            if (!response.ok) {
+                throw Error("ERROR");
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data.data);
+            const html = data.data
+                .map(user => {
+                    return `
+            <div class="user">
+            <p><img src="${user.img}" /></p>
+            <p>Name: ${user.name}</p>
+            </div>
+            `;
+                })
+                .join("");
+            console.log(html);
+            document.querySelector('#campeonesLista').insertAdjacentElement("afterbegin", html);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+}
+
+fetchData();
+
+
+
+
+
+
+
+/*}
+
+.then(response => {
+            if (!response.ok) {
+                throw Error("ERROR");
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log(data);
+            const html = data
+                .map(user => {
+                    return `
+                <div class="user">
+                <p>Name: ${user.name}</p>
+                </div>
+                `;
+
+
+                })
+                .join("");
+            console.log(html);
+            document.querySelector('#campeonesLista').insertAdjacentElement("afterbegin", html);
+
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+}
+
+
+fetchData();*/
