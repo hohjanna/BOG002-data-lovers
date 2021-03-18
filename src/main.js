@@ -1,70 +1,50 @@
 import { example } from './data.js';
-// import data from './data/lol/lol.js';
 import data from './data/lol/lol.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-//console.log(example, data);//
+let lol = Object.values(data.data); //se convierte el objeto a un array
+//console.log("arrayDatos", typeof(lol));
 
 
 
-//Esconder la segunda pantalla
 
 document.getElementById("screen1").style = "display:normal"
-document.getElementById("screen2").style = "display:none"
+document.getElementById("screen2").style = "display:none" //Esconder la segunda pantalla
 
 
-//Función botón elegir campeon
-
-const btnChooseRole = document.getElementById("btnData");
+const btnChooseRole = document.getElementById("btnData"); //Función botón elegir campeon
 btnChooseRole.addEventListener('click', btnData);
 
 function btnData() {
-
     document.getElementById("screen1").style = "display:none"
     document.getElementById("screen2").style = "display:normal"
 }
 
 
 
+// Segunda historia: mostrar todas las cardas de los personajes
 
-//Llamar la data del archivo .json
-
-fetch('./data/lol/lol.json')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        appendData(data);
-    })
-    .catch(function(err) {
-        console.log(err);
-    });
-
-function appendData(data) {
-    let mainContainer = document.getElementById("dataLol");
+function showRoles(data) {
+    const mainContainer = document.getElementById("dataLol");
     for (let i = 0; i < data.length; i++) {
         let div = document.createElement("div");
-        div.innerHTML = 'Name: ' + data[i].name + data[i].title;
+        div.innerHTML = /*'Name: ' + data[i].name + data[i].title;*/ (`
+        <div class="column">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image">
+                 <img src="${data[i].img}"/>
+               </figure>
+            </div>
+          </div>
+        </div>
+       `);
+
         mainContainer.appendChild(div);
+
     }
 
 }
 
-
-
-
-
-//obtener data con Fetch (API resquest)
-
-
-
-/*const apiUrl = './data/lol/lol.json';
-
-async function getData() {
-    const response = await fetch(apiUrl);
-    const json = await response.json();
-    console.log(json);
-}
-getData();*/
+showRoles(lol);
 
 
 
@@ -72,73 +52,16 @@ getData();*/
 
 
 
-/*function fetchData() {
-    fetch('./data/lol/lol.json')
-        .then(response => {
-            if (!response.ok) {
-                throw Error("ERROR");
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data.data);
-            const html = data.data
-            for (let i = 0; i < data.length; i++) {
-                return `
-            <div id="dataLol">
-            <p><img src="${dataLol.img}" /></p>
-            <p>Name: ${dataLol.name}</p>
-            </div>
-            `;
-            }
-            .join("");
-            console.log(html);
-            document.querySelector('#dataLol').insertAdjacentElement("afterbegin", html);
-        })
-        .catch(error => {
-            console.log(error);
-        });
+//Llamar la data del archivo .json
 
-}
+/*fetch('./data/lol/lol.json')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        appendData(data.data);
 
-fetchData();
-
-
-
-
-
-
-
-/*}
-
-.then(response => {
-            if (!response.ok) {
-                throw Error("ERROR");
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log(data);
-            const html = data
-                .map(user => {
-                    return `
-                <div class="user">
-                <p>Name: ${user.name}</p>
-                </div>
-                `;
-
-
-                })
-                .join("");
-            console.log(html);
-            document.querySelector('#campeonesLista').insertAdjacentElement("afterbegin", html);
-
-        })
-        .catch(error => {
-            console.log(error);
-        });
-
-}
-
-
-fetchData();*/
+    })
+    .catch(function(err) {
+        console.log(err);
+    });*/
