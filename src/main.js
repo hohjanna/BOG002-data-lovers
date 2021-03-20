@@ -6,16 +6,16 @@ let lol = Object.values(data.data); //se convierte el objeto a un array
 
 
 
-document.getElementById("screen1").style = "display:normal"
-document.getElementById("screen2").style = "display:none" //Esconder la segunda pantalla
+document.getElementById("pantalla-1").style = "display:normal"
+document.getElementById("pantalla-2").style = "display:none" //Esconder la segunda pantalla
 
 
 const btnChooseRole = document.getElementById("btnData"); //Función botón elegir campeon
 btnChooseRole.addEventListener('click', btnData);
 
 function btnData() {
-    document.getElementById("screen1").style = "display:none"
-    document.getElementById("screen2").style = "display:normal"
+    document.getElementById("pantalla-1").style = "display:none"
+    document.getElementById("pantalla-2").style = "display:normal"
 }
 
 
@@ -27,16 +27,13 @@ function showRoles(data) {
     for (let i = 0; i < data.length; i++) {
         let div = document.createElement("div");
         div.innerHTML = /*'Name: ' + data[i].name + data[i].title;*/ (`
-        <div class="column">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image">
-                 <img src="${data[i].img}"/>
-               </figure>
+        
+        <div id="card-body">
+            <div class="card-image" style="width: 20em;">
+            <img src="${data[i].splash}" id="img" alt="splashChampion">
+            <h2 class="card-title">${data[i].name}</h2>
             </div>
-          </div>
-        </div>
-       `);
+        </div>`);
 
         mainContainer.appendChild(div);
 
@@ -45,6 +42,12 @@ function showRoles(data) {
 }
 
 showRoles(lol);
+
+
+
+
+
+
 
 
 

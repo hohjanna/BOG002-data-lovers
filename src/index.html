@@ -4,53 +4,103 @@
 <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
 </head>
 
+
+
 <body>
 
-    <!-- Historia de usuario 1 : ver todo el contenido de la Home -->
 
-    <div class="contenedor">
-        <section id="screen1">
-            <nav>
-                <ul class="menu">
-                    <li class="logo">
-                        <a href="#"><img src="Imagenes/Logo.png" alt="Logo - Lol"></a>
-                    </li>
-                    <li class="item">
-                        <a href="#"></a>Eventos</li>
-                    <li class="item">
-                        <a href="#"></a>Foro</li>
-                    <li class="item button">
-                        <a href="#"></a>Iniciar sesión</li>
-                    <li class="item button principal">
-                        <a href="#"></a>Registro</li>
-                    <li class="toggle"><span class="barsMenu"></span></li>
-                </ul>
-            </nav>
-            <div>
-                <div class="fondoImagen"><img src="Imagenes/fondo.svg">
-                    <h1>League of legends</h1>
-                    <p>Es un juego en linea de estrategia en donde dos equipos de 5 poderosos campeones trabajan juntos basados en sus habilidades para enfrentar y destruir la base del equipo contrario</p>
-                    <a id="btnData" href="#">Elegir campeon</a>
+    <!-- Menú navegacion y búsqueda -->
+    <header>
+        <div class="contenedor-navegacion">
+
+            <div class="logo">
+                <img src="Imagenes/Logo.png" alt="Logo - Lol">
+            </div>
+
+            <div id="contenedor-busqueda">
+                <input id="placeholder" placeholder="Busca tu campeón" class="busqueda" type="text" />
+                <div id="lupa">
+                    <img src="Imagenes/IconoLupa.png" alt="icono-busqueda">
                 </div>
             </div>
 
-        </section>
-
-
-
-        <!-- Historia de usuario 2 : display de campeones -->
-
-        <section id="screen2">
-            <div id="dataLol">
-                <p class="text">Aquí se ven todos los campeones en cards</p>
+            <div class="nav">
+                <nav>
+                    <ul class="menu">
+                        </li>
+                        <li class="item">
+                            <a href="#"></a>Eventos</li>
+                        <li class="item">
+                            <a href="#"></a>Foro</li>
+                        <li class="item button">
+                            <a href="#"></a>Iniciar sesión</li>
+                        <li class="item button principal">
+                            <a href="#"></a>Registro</li>
+                        <li class="toggle"><span class="barsMenu"></span></li>
+                    </ul>
+                </nav>
 
             </div>
+        </div>
+    </header>
 
-        </section>
-    </div>
+
+
+    <!-- Historia de usuario 1 : Banner descriptivo -->
+    <section id="pantalla-1">
+        <div>
+            <div class="fondoImagen"><img src="Imagenes/fondo.svg">
+                <h1>League of legends</h1>
+                <p>Es un juego en linea de estrategia en donde dos equipos de 5 poderosos campeones trabajan juntos basados en sus habilidades para enfrentar y destruir la base del equipo contrario</p>
+                <a id="btnData" href="#">Elegir campeon</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Historia de usuario 4 : Display Campeones -->
+    <section id="pantalla-2">
+        <div id="contenedor-padre-filtros">
+            <h2>Roles</h2>
+            <button id="ver-todos">Ver todos</button><br>
+            <button id="mago">Mago</button><br>
+            <button id="tirador">Tirador</button><br>
+            <button id="luchador">Luchador</button><br>
+            <button id="asesino">Asesino</button><br>
+            <button id="tanque">Tanque</button><br>
+            <button id="apoyo">Apoyo</button>
+            <h2>Dificultad</h2>
+            <button>Baja</button><br>
+            <button>Media</button><br>
+            <button>Alta</button>
+        </div>
+
+
+
+
+        <div id="contenedor-padre-contenido">
+            <div class="contenedor-organizar">
+                <button>Organizar</button>
+            </div>
+            <div id="contenedor-tarjetas">
+                <div id="dataLol" class="row"></div>
+            </div>
+            <div class="contenedor-retroceder-avanzar">
+                <button>Atras</button>
+                <button>Adelante</button>
+            </div>
+        </div>
+
+    </section>
+
 
 
 
