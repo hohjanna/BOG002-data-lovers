@@ -208,7 +208,7 @@ h1 {
     font-family: 'Saira Semi Condensed', sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 5vw;
+    font-size: 4vw;
     line-height: 104px;
     color: #FFFFFF;
 }
@@ -261,17 +261,18 @@ p {
 /*Estilos template js*/
 
 #img {
-    border-radius: 13px;
-    margin: 5px;
+    border-radius: 13px 13px 0px 0px;
+    /*margin: 0px;*/
+    align-items: center;
 }
 
 .card-image {
     width: 360px;
-    height: 330px;
+    height: 350px;
     background: #F7F7F7;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 18px;
-    margin: 20px;
+    margin: 10px;
 }
 
 .card-title {
@@ -289,24 +290,11 @@ p {
 #contenedor-padre-filtros {
     background: rgba(96, 228, 246, 0.16);
     width: 20%;
-    align-items: center;
-}
-
-#contenedor-padre-contenido {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(206, 15, 15);
-    width: 80%;
-    justify-content: right;
-}
-
-.contenedor-botones-roles {
-    justify-content: center;
 }
 
 button {
     width: 160px;
-    height: 38px;
+    height: 35px;
     background: #FFFFFF;
     border: 1px solid #187F8D;
     box-sizing: border-box;
@@ -314,8 +302,11 @@ button {
     margin: 5px;
 }
 
-#contenedor-tarjetas {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.row {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.row div {
+    padding: 0.5em;
 }
