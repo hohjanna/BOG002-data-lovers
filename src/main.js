@@ -20,7 +20,7 @@ function btnData() {
 
 
 
-// Segunda historia: mostrar todas las cardas de los personajes
+// Segunda historia: mostrar todas las cartas de los personajes
 
 function showRoles(data) {
     const mainContainer = document.getElementById("dataLol");
