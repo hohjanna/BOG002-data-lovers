@@ -21,13 +21,6 @@
                 <img src="Imagenes/Logo.png" alt="Logo - Lol">
             </div>
 
-            <div id="contenedor-busqueda">
-                <input id="placeholder" placeholder="Busca tu campeón" class="busqueda" type="text" />
-                <div id="lupa">
-                    <img src="Imagenes/IconoLupa.png" alt="icono-busqueda">
-                </div>
-            </div>
-
             <div class="nav">
                 <nav>
                     <ul class="menu">
@@ -68,7 +61,7 @@
 
     <!-- Historia de usuario 4 : Display Campeones -->
     <section id="pantalla-2">
-        <div id="contenedor-padre-filtros">
+        <!--<div id="contenedor-padre-filtros">
             <h2>Roles</h2>
             <button id="ver-todos">Ver todos</button><br>
             <button id="mago">Mago</button><br>
@@ -81,21 +74,53 @@
             <button>Baja</button><br>
             <button>Media</button><br>
             <button>Alta</button>
-        </div>
+        </div>-->
+
 
 
 
 
         <div id="contenedor-padre-contenido">
-            <div class="contenedor-organizar">
-                <button>Organizar</button>
+
+            <div id="contenedor-busqueda">
+
+                <input id="barraBusqueda" placeholder="Busca tu campeón" type="search" />
+                <div class="contenedor-roles-organizar">
+                    <div>
+                        <ul class="roles-filtro">
+                            <li><button>Roles</button>
+                                <ul>
+                                    <li>Mago</li>
+                                    <li>Tirador</li>
+                                    <li>Asesino</li>
+                                    <li>Tanque</li>
+                                    <li>Luchador</li>
+                                    <li>Apoyo</li>
+                                </ul>
+                            </li>
+                    </div>
+
+                    <div>
+                        <ul class="organizar-filtro">
+                            <li><button>Organizar</button>
+                                <ul>
+                                    <li>A-Z</li>
+                                    <li>Z-A</li>
+
+                                </ul>
+                            </li>
+                    </div>
+
+                </div>
+
+
+
+
             </div>
+
+
             <div class="grid">
                 <div id="dataLol" class="row"></div>
-            </div>
-            <div class="contenedor-retroceder-avanzar">
-                <button>Atras</button>
-                <button>Adelante</button>
             </div>
         </div>
 
