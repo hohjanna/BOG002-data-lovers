@@ -287,11 +287,10 @@ p {
     flex-direction: row;
 }
 
-
-/*#contenedor-padre-filtros {
-    background: rgba(96, 228, 246, 0.16);
-    width: 20%;
-}*/
+#buttons-container {
+    display: flex;
+    flex-direction: row;
+}
 
 button {
     width: 160px;
@@ -312,17 +311,7 @@ button {
     padding: 0.5em;
 }
 
-.contenedor-roles-organizar {
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-}
-
-#contenedor-busqueda {
-    display: flex;
-}
-
-#barraBusqueda {
+#search {
     width: 160px;
     height: 35px;
     background: #FFFFFF;

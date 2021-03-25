@@ -61,61 +61,34 @@
 
     <!-- Historia de usuario 4 : Display Campeones -->
     <section id="pantalla-2">
-        <!--<div id="contenedor-padre-filtros">
-            <h2>Roles</h2>
-            <button id="ver-todos">Ver todos</button><br>
-            <button id="mago">Mago</button><br>
-            <button id="tirador">Tirador</button><br>
-            <button id="luchador">Luchador</button><br>
-            <button id="asesino">Asesino</button><br>
-            <button id="tanque">Tanque</button><br>
-            <button id="apoyo">Apoyo</button>
-            <h2>Dificultad</h2>
-            <button>Baja</button><br>
-            <button>Media</button><br>
-            <button>Alta</button>
-        </div>-->
-
-
-
-
-
-        <div id="contenedor-padre-contenido">
-
-            <div id="contenedor-busqueda">
-
-                <input id="barraBusqueda" placeholder="Busca tu campeón" type="search" />
-                <div class="contenedor-roles-organizar">
-                    <div>
-                        <ul class="roles-filtro">
-                            <li><button>Roles</button>
-                                <ul>
-                                    <li>Mago</li>
-                                    <li>Tirador</li>
-                                    <li>Asesino</li>
-                                    <li>Tanque</li>
-                                    <li>Luchador</li>
-                                    <li>Apoyo</li>
-                                </ul>
-                            </li>
-                    </div>
-
-                    <div>
-                        <ul class="organizar-filtro">
-                            <li><button>Organizar</button>
-                                <ul>
-                                    <li>A-Z</li>
-                                    <li>Z-A</li>
-
-                                </ul>
-                            </li>
-                    </div>
-
+        <div id="father-container">
+            <div id="buttons-container">
+                <div>
+                    <input id="search" placeholder="Busca tu campeón" type="search" />
                 </div>
 
+                <div id="sortButton">
+                    <select name="order" id="orderByName">
+                        <option selected value="0">Ordenar por nombre</option>
+                        <option id="select-AZ" value="aToZ">A-Z</option>
+                        <option id="select-ZA" value="zToA">Z-A</option>
+                    </select>
+                </div>
 
-
-
+                <div id="filterButton">
+                    <select name="types" id="selectorTag">
+                        <option selected value="0">Filtrar por rol</option>
+                        <option id="mago" value="Mage">Mago</option>
+                        <option id="tirador" value="Marksman">Tirador</option>
+                        <option id="luchador" value="Fighter">Luchador</option>
+                        <option id="asesino" value="Assassin">Asesino</option>
+                        <option id="tanque" value="Tank">Tanque</option>
+                        <option id="apoyo" value="Support">Apoyo</option>
+                    </select>
+                </div>
+                <div>
+                    <button>Ver todos los campeones</button>
+                </div>
             </div>
 
 
