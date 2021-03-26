@@ -1,4 +1,4 @@
-import { example } from './data.js';
+import { sortNames } from './data.js';
 import data from './data/lol/lol.js';
 const lol = Object.values(data.data); //se convierte el objeto a un array
 //console.log("arrayDatos", typeof(lol));
@@ -28,7 +28,7 @@ function showRoles(data) {
     }
     for (let i = 0; i < data.length; i++) {
         let div = document.createElement("div");
-        div.innerHTML = /*'Name: ' + data[i].name + data[i].title;*/ (`
+        div.innerHTML = (`
         
         <div id="card-body">
             <div class="card-image" style="width: 16em;">
@@ -65,60 +65,39 @@ barraBusqueda.addEventListener('keyup', (e) => {
 });
 
 
+
+
 //Sexta historia: Funcion sort A-Z Z-A
 
 const sortType = document.getElementById('orderByName');
+/*const sortSelect = Object.values(document.getElementsByClassName('sort')); // tomar valores de la opciones del select
 
+sortType.addEventListener('change', changeOrder);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Recorrer la data capturar la categoria - tag
-
-/*function filtrar_por_categoria(peliculas,categoria) {
-    var matches=[];
-    peliculas.forEach(function(pelicula) {
-       if(pelicula.categories.indexOf(categoria)!==-1) {
-         matches.push(pelicula);
-       }
-    });
-    return matches;
+function changeOrder() {
+    const sortNames = (lol, sortBy, sortOrder);
+    const order = lol.sort((a, b) => a[sortBy] > b[sortBy] ? 1 : -1);
+    if (sortOrder === 'descendente') {
+        order = order.reverse();
+    }
+    return order;
 }*/
 
 
-/*const filtroCategoria = lol.filter(function(lol) {
-    return campeones.tag >= lol[0].tags[0];
+
+
+const orderData = lol.sort(function(a, b) {
+    const nameA = a.name;
+    const nameB = b.name;
+    if (nameA < nameB) //sort string ascending
+        return -1;
+    if (nameA > nameB)
+        return 1;
+    return 0; //default return value (no sorting)
 
 });
 
-console.log(filtroCategoria);*/
-
-
-
-
-let posicion = lol[1].tags[1];
-console.log(posicion);
+console.log(orderData);
 
 
 
@@ -126,60 +105,42 @@ console.log(posicion);
 
 
 
+// Septima historia : filtrar por rol
+
+const filterTag = document.getElementById('selectorTag');
+const select = Object.values(document.getElementsByClassName('filter')); // tomar valores de la opciones del select
 
 
 
 
+filterTag.addEventListener('change', selectRole);
+
+function selectRole() {
+    const filterData = (lol, select);
+    const newFilter = lol.filter((roles) => {
+        const matches = [];
+        select.forEach((value) => {
+            if (roles.tags.includes(value)) {
+                matches.push(true);
+            } else {
+                matches.push(false);
+            }
+
+        });
+        if (matches.push(false)) {
+            return false;
+        } else {
+            return roles;
 
 
+        }
 
 
+    });
 
 
+    showRoles(newFilter);
+    //console.log(newFilter);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Llamar la data del archivo .json
-
-/*fetch('./data/lol/lol.json')
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        appendData(data.data);
-
-    })
-    .catch(function(err) {
-        console.log(err);
-    });*/
+}

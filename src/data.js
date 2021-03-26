@@ -9,9 +9,12 @@ export const anotherExample = () => {
 };
 
 
-/*export const filter = (lol,filterType) => {
-    const result = lol.filter((element) => {
-      return element.type.includes(filterType);
-    });
-    return result;
-  };*/
+
+export const sortNames = (lol, sortBy, sortOrder) => {
+    let dataOrdenada = lol.sort((a, b) => a[sortBy] > b[sortBy] ? 1 : -1);
+    if (sortOrder === 'descendente') {
+        dataOrdenada = dataOrdenada.reverse();
+    }
+    //return dataOrdenada;
+    //console.log(dataOrdenada);
+}
