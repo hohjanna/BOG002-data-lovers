@@ -3,19 +3,19 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>Champions-DataLoL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap" rel="stylesheet">
+        
 </head>
-
-
 
 <body>
 
-
-    <!-- Menú navegacion y búsqueda -->
+    <!-- Contenedor de Navegación -->
     <header>
-        <div class="contenedor-navegacion">
+        <div class="container-shipping">
 
             <div class="logo">
                 <img src="Imagenes/Logo.png" alt="Logo - Lol">
@@ -42,25 +42,50 @@
     </header>
 
 
-
     <!-- Historia de usuario 1 : Banner descriptivo -->
-    <section id="pantalla-1">
+    <section id="screen-1">
         <div>
-            <div class="fondoImagen"><img src="Imagenes/fondo.svg">
-                <h1>League of legends</h1>
-                <p>Juego de estrategia en línea donde dos equipos de 5 campeones trabajan juntos para destruir la base del equipo contrario</p>
-                <a id="btnData" href="#">Elegir campeon</a>
+            <div class="background-image"><img src="Imagenes/fondo.svg">
+                <div id="image-league"><img src="Imagenes/league2.png"></div>
+                <p id="initial-text">Juego de estrategia en línea donde dos equipos de 5 campeones trabajan juntos para destruir la base del equipo contrario</p>
+                <a id="btnData" href="#">Elegir campeón</a>
             </div>
         </div>
+
+    <!-- Historia de usuario 2 : Roles de LoL -->
+        <div id="screen-secondPart">
+            <div id="container-roles">
+                <h1 id="title-roles">Roles</h1>
+                <p id="roles-text">Saber elegir tu rol es fundamental para mejorar tus habilidades en el campo de batalla.<br>
+                                 Cada rol tiene diferentes campeones</p>
+                <img src="Imagenes/Rol Mago.png">
+                <img src="Imagenes/Rol Tirador.png">
+                <img src="Imagenes/Rol Luchador.png">
+                <img src="Imagenes/Rol Asesino.png">
+                <img src="Imagenes/Rol Tanque.png">
+                <img src="Imagenes/Rol Apoyo.png">
+            </div>
+
+    <!-- Historia de usuario 3 : Mapa de posiciones -->        
+            <div id="container-map">
+                <h1 id="title-map">Mapa</h1>
+                <p id="map-text">Explora cada posición para averiguar cual zona se sitúa mas a tu nivel</p>
+                <img id="map-small" src="Imagenes/Mapa pequeño.png">
+                <a id="btnDataMap" href="#">Elegir campeón</a>
+                <div id="social-media">
+                    <img src="Imagenes/Logo Youtube.png">
+                    <img src="Imagenes/Logo Twich.png">
+                    <img src="Imagenes/Logo Mixer.png">
+                </div>
+            </div>
+
+            
+        </div>
+
     </section>
 
-
-
-
-
-
     <!-- Historia de usuario 4 : Display Campeones -->
-    <section id="pantalla-2">
+    <section id="screen-2">
         <div id="father-container">
             <div id="buttons-container">
                 <div>
@@ -98,8 +123,6 @@
         </div>
 
     </section>
-
-
 
 
     <script src="main.js" type="module"></script>

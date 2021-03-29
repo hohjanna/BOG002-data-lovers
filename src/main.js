@@ -4,15 +4,15 @@ const lol = Object.values(data.data); //se convierte el objeto a un array
 //console.log("arrayDatos", typeof(lol));
 //Aquí va la manipulación del DOM
 
-document.getElementById("pantalla-1").style = "display:normal"
-document.getElementById("pantalla-2").style = "display:none" //Esconder la segunda pantalla
+document.getElementById("screen-1").style = "display:normal"
+document.getElementById("screen-2").style = "display:none" //Esconder la segunda pantalla
 
 const btnChooseRole = document.getElementById("btnData"); //Función botón elegir campeon
 btnChooseRole.addEventListener('click', btnData);
 
 function btnData() {
-    document.getElementById("pantalla-1").style = "display:none"
-    document.getElementById("pantalla-2").style = "display:normal"
+    document.getElementById("screen-1").style = "display:none"
+    document.getElementById("screen-2").style = "display:normal"
 }
 
 
