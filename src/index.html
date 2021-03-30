@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap" rel="stylesheet">
-        
+
 </head>
 
 <body>
@@ -52,12 +52,11 @@
             </div>
         </div>
 
-    <!-- Historia de usuario 2 : Roles de LoL -->
+        <!-- Historia de usuario 2 : Roles de LoL -->
         <div id="screen-secondPart">
             <div id="container-roles">
                 <h1 id="title-roles">Roles</h1>
-                <p id="roles-text">Saber elegir tu rol es fundamental para mejorar tus habilidades en el campo de batalla.<br>
-                                 Cada rol tiene diferentes campeones</p>
+                <p id="roles-text">Saber elegir tu rol es fundamental para mejorar tus habilidades en el campo de batalla.<br> Cada rol tiene diferentes campeones</p>
                 <img src="Imagenes/Rol Mago.png">
                 <img src="Imagenes/Rol Tirador.png">
                 <img src="Imagenes/Rol Luchador.png">
@@ -66,7 +65,7 @@
                 <img src="Imagenes/Rol Apoyo.png">
             </div>
 
-    <!-- Historia de usuario 3 : Mapa de posiciones -->        
+            <!-- Historia de usuario 3 : Mapa de posiciones -->
             <div id="container-map">
                 <h1 id="title-map">Mapa</h1>
                 <p id="map-text">Explora cada posición para averiguar cual zona se sitúa mas a tu nivel</p>
@@ -79,7 +78,7 @@
                 </div>
             </div>
 
-            
+
         </div>
 
     </section>
@@ -94,21 +93,22 @@
 
                 <div id="sortButton">
                     <select name="order" id="orderByName">
-                        <option class="sort" selected value="0">Ordenar por nombre</option>
-                        <option class="sort" value="aToZ">A-Z</option>
-                        <option class="sort" value="zToA">Z-A</option>
+                        <option value="" disabled selected>Ordenar por nombre</option>
+                        <option value="ascendente">A-Z</option>
+                        <option value="descendente">Z-A</option>
                     </select>
                 </div>
 
                 <div id="filterButton">
                     <select name="types" id="selectorTag">
-                        <option class="filter" selected value="0">Filtrar por rol</option>
-                        <option class="filter" value="Mage">Mago</option>
-                        <option class="filter" value="Marksman">Tirador</option>
-                        <option class="filter" value="Fighter">Luchador</option>
-                        <option class="filter" value="Assassin">Asesino</option>
-                        <option class="filter" value="Tank">Tanque</option>
-                        <option class="filter" value="Support">Apoyo</option>
+                        <option value="" disabled selected>Filtrar por rol</option>
+                        <option value="all">Ver todos</option>
+                        <option value="Mage">Mago</option>
+                        <option value="Marksman">Tirador</option>
+                        <option value="Fighter">Luchador</option>
+                        <option value="Assassin">Asesino</option>
+                        <option value="Tank">Tanque</option>
+                        <option value="Support">Apoyo</option>
                     </select>
                 </div>
                 <div>

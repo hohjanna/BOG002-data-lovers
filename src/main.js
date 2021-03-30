@@ -69,7 +69,40 @@ barraBusqueda.addEventListener('keyup', (e) => {
 
 //Sexta historia: Funcion sort A-Z Z-A
 
-const sortType = document.getElementById('orderByName');
+//Es importante? tener una copia de nuestro array para desorganizarlo y luego ordenarlo
+
+const newArray = lol.slice();
+//console.log(newArray);
+
+/*const sortByName = newArray.sort((a, b) => {
+    return b.name - a.name;
+});
+
+console.log(sortByName);*/
+
+
+
+
+
+
+
+/*const sortType = document.getElementById('orderByName');
+sortType.addEventListener('change', changeOrder);
+
+function changeOrder() {
+    const order = sortType.value;
+    //console.log(order);
+    const sortNames = (lol, sortBy, sortOrder);
+    const sortChamps = lol.sort((a, b) => a[sortBy] > b[sortBy] ? 1 : -1);
+    if (sortOrder === 'descendente') {
+        sortChamps = sortChamps.reverse();
+    }
+
+    showRoles(sortChamps.includes(order));
+
+}*/
+
+
 /*const sortSelect = Object.values(document.getElementsByClassName('sort')); // tomar valores de la opciones del select
 
 sortType.addEventListener('change', changeOrder);
@@ -81,23 +114,47 @@ function changeOrder() {
         order = order.reverse();
     }
     return order;
+    
 }*/
 
 
 
 
-const orderData = lol.sort(function(a, b) {
-    const nameA = a.name;
-    const nameB = b.name;
-    if (nameA < nameB) //sort string ascending
-        return -1;
-    if (nameA > nameB)
-        return 1;
-    return 0; //default return value (no sorting)
 
-});
 
-console.log(orderData);
+const sortType = document.getElementById('orderByName');
+sortType.addEventListener('change', sortValue);
+
+function sortValue() {
+    const order = sortType.value;
+    //console.log(order);
+    const orderData = lol.sort((a, b) => {
+        const nameA = a.name;
+        const nameB = b.name;
+        //console.log(nameA);
+        if (nameA < nameB) { return -1;
+            console.log(nameA < nameB); } //descendente
+        if (nameA > nameB) { return 1; }
+        return 0;
+
+
+
+    });
+
+    //showRoles(orderData);
+
+
+}
+
+
+
+/*users.sort((a, b) => a.firstname !== b.firstname ? a.firstname < b.firstname ? -1 : 1 : 0);*/
+
+
+
+
+
+
 
 
 
@@ -107,40 +164,19 @@ console.log(orderData);
 
 // Septima historia : filtrar por rol
 
-const filterTag = document.getElementById('selectorTag');
-const select = Object.values(document.getElementsByClassName('filter')); // tomar valores de la opciones del select
+const select = document.getElementById('selectorTag');
 
+select.addEventListener('change', takeValue);
 
+function takeValue() {
+    const value = select.value;
+    //console.log(value);
+    const champRoles = lol.filter(item => item.tags.includes(value))
 
-
-filterTag.addEventListener('change', selectRole);
-
-function selectRole() {
-    const filterData = (lol, select);
-    const newFilter = lol.filter((roles) => {
-        const matches = [];
-        select.forEach((value) => {
-            if (roles.tags.includes(value)) {
-                matches.push(true);
-            } else {
-                matches.push(false);
-            }
-
-        });
-        if (matches.push(false)) {
-            return false;
-        } else {
-            return roles;
-
-
-        }
-
-
-    });
-
-
-    showRoles(newFilter);
-    //console.log(newFilter);
-
+    if (value === 'all') {
+        showRoles(lol);
+    } else {
+        showRoles(champRoles);
+    }
 
 }
