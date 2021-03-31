@@ -132,6 +132,7 @@ img {
     background: #06DAF6;
 }
 
+
 /*Screen 1.2*/
 
 #screen-secondPart {
@@ -143,7 +144,6 @@ img {
     background-color: white;
     width: 60%;
     display: grid;
-
 }
 
 #title-roles {
@@ -189,8 +189,7 @@ img {
 }
 
 #map-small {
-    margin: 10% 0% 0% 0% ;    
-    
+    margin: 10% 0% 0% 0%;
 }
 
 #btnDataMap {
@@ -218,6 +217,7 @@ img {
     background: #06DAF6;
 }
 
+
 /*Screen 2*/
 
 #screen-2 {
@@ -237,7 +237,7 @@ img {
 button {
     width: 210px;
     height: 35px;
-    background:black;
+    background: black;
     border: 2px solid white;
     color: white;
     box-sizing: border-box;
@@ -257,7 +257,7 @@ button:hover {
     width: 210px;
     height: 35px;
     padding-left: 5px;
-    background:black;
+    background: black;
     border: 2px solid white;
     color: white;
     box-sizing: border-box;
@@ -271,7 +271,7 @@ button:hover {
     width: 210px;
     height: 35px;
     padding-left: 5px;
-    background:black;
+    background: black;
     border: 2px solid white;
     color: white;
     box-sizing: border-box;
@@ -294,7 +294,7 @@ button:hover {
     width: 210px;
     height: 35px;
     padding-left: 10px;
-    background:white;
+    background: white;
     border: 2px solid white;
     color: black;
     box-sizing: border-box;
@@ -388,10 +388,3 @@ button:hover {
         order: 1;
     }
 }
-
-
-
-
-
-
-

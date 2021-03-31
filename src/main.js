@@ -1,4 +1,4 @@
-import {} from './data.js';
+import { order, searchFilter } from './data.js';
 import data from './data/lol/lol.js';
 const lol = Object.values(data.data); //se convierte el objeto a un array
 //console.log("arrayDatos", typeof(lol));
@@ -58,7 +58,20 @@ showRoles(lol);
 //Quinta historia: Barra de búsqueda (filtro)
 const barraBusqueda = document.getElementById('search');
 
-barraBusqueda.addEventListener('keyup', (e) => {
+
+
+
+barraBusqueda.addEventListener('change', (e) => {
+    const inputString = e.target.value;
+    //console.log(inputString);
+    document.getElementById("dataLol").innerHTML = showRoles(searchFilter(lol, barraBusqueda.value));
+    console.log(barraBusqueda.value);
+    //showRoles(lol, inputString);
+
+})
+
+
+/*barraBusqueda.addEventListener('keyup', (e) => {
     const inputString = e.target.value.toLowerCase();
     const filtroCampeones = lol.filter((campeones) => {
         //console.log(`${campeones.name}`);
@@ -66,7 +79,7 @@ barraBusqueda.addEventListener('keyup', (e) => {
         return `${campeones.name}`.toLowerCase().includes(inputString);
     });
     showRoles(filtroCampeones);
-});
+});*/
 
 
 
@@ -74,20 +87,9 @@ barraBusqueda.addEventListener('keyup', (e) => {
 //Sexta historia: Funcion sort A-Z Z-A
 
 const sortType = document.getElementById('orderByName');
-sortType.addEventListener('change', order);
-
-function order() {
-    const sortValue = sortType.value;
-    let orderChamps = lol.filter((a, b) => a.name > b.name ? 1 : -1);
-    if (sortValue === 'descendente') {
-        orderChamps = orderChamps.reverse();
-        return showRoles(orderChamps);
-    }
-    if (sortValue === 'ascendente') {
-        return showRoles(lol);
-    }
-
-};
+sortType.addEventListener('change', () => {
+    showRoles(order(lol, sortType.value));
+})
 
 
 
