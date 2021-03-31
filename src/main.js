@@ -1,7 +1,11 @@
-import { sortNames } from './data.js';
+import {} from './data.js';
 import data from './data/lol/lol.js';
 const lol = Object.values(data.data); //se convierte el objeto a un array
 //console.log("arrayDatos", typeof(lol));
+
+
+
+
 //Aquí va la manipulación del DOM
 
 document.getElementById("screen-1").style = "display:normal"
@@ -69,94 +73,21 @@ barraBusqueda.addEventListener('keyup', (e) => {
 
 //Sexta historia: Funcion sort A-Z Z-A
 
-//Es importante? tener una copia de nuestro array para desorganizarlo y luego ordenarlo
-
-const newArray = lol.slice();
-//console.log(newArray);
-
-/*const sortByName = newArray.sort((a, b) => {
-    return b.name - a.name;
-});
-
-console.log(sortByName);*/
-
-
-
-
-
-
-
-/*const sortType = document.getElementById('orderByName');
-sortType.addEventListener('change', changeOrder);
-
-function changeOrder() {
-    const order = sortType.value;
-    //console.log(order);
-    const sortNames = (lol, sortBy, sortOrder);
-    const sortChamps = lol.sort((a, b) => a[sortBy] > b[sortBy] ? 1 : -1);
-    if (sortOrder === 'descendente') {
-        sortChamps = sortChamps.reverse();
-    }
-
-    showRoles(sortChamps.includes(order));
-
-}*/
-
-
-/*const sortSelect = Object.values(document.getElementsByClassName('sort')); // tomar valores de la opciones del select
-
-sortType.addEventListener('change', changeOrder);
-
-function changeOrder() {
-    const sortNames = (lol, sortBy, sortOrder);
-    const order = lol.sort((a, b) => a[sortBy] > b[sortBy] ? 1 : -1);
-    if (sortOrder === 'descendente') {
-        order = order.reverse();
-    }
-    return order;
-    
-}*/
-
-
-
-
-
-
 const sortType = document.getElementById('orderByName');
-sortType.addEventListener('change', sortValue);
+sortType.addEventListener('change', order);
 
-function sortValue() {
-    const order = sortType.value;
-    //console.log(order);
-    const orderData = lol.sort((a, b) => {
-        const nameA = a.name;
-        const nameB = b.name;
-        //console.log(nameA);
-        if (nameA < nameB) { return -1;
-            console.log(nameA < nameB); } //descendente
-        if (nameA > nameB) { return 1; }
-        return 0;
+function order() {
+    const sortValue = sortType.value;
+    let orderChamps = lol.filter((a, b) => a.name > b.name ? 1 : -1);
+    if (sortValue === 'descendente') {
+        orderChamps = orderChamps.reverse();
+        return showRoles(orderChamps);
+    }
+    if (sortValue === 'ascendente') {
+        return showRoles(lol);
+    }
 
-
-
-    });
-
-    //showRoles(orderData);
-
-
-}
-
-
-
-/*users.sort((a, b) => a.firstname !== b.firstname ? a.firstname < b.firstname ? -1 : 1 : 0);*/
-
-
-
-
-
-
-
-
+};
 
 
 
@@ -172,11 +103,10 @@ function takeValue() {
     const value = select.value;
     //console.log(value);
     const champRoles = lol.filter(item => item.tags.includes(value))
-
     if (value === 'all') {
         showRoles(lol);
     } else {
         showRoles(champRoles);
     }
 
-}
+};
