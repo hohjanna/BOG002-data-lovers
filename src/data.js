@@ -7,6 +7,7 @@ export const order = (data, sortValue) => {
     let orderChamps = newArray.sort((a, b) => a.name > b.name ? 1 : -1);
     if (sortValue === 'descendente') {
         orderChamps = orderChamps.reverse();
+
     }
     if (sortValue === 'ascendente') {}
 
@@ -14,11 +15,22 @@ export const order = (data, sortValue) => {
 };
 
 
-export const searchFilter = (data, keyValue) => {
-    const filtroCampeones = data.filter((data) => {
-        //return data.toLowerCase().includes(keyValue);
-        if (data.toLowerCase().includes(keyValue)) {
-            return filtroCampeones;
-        }
-    });
+export const searchFilter = (data, inputValue) => {
+    const filterChamps = data.filter((data) => {
+        return `${data.name}`.toLowerCase().includes(inputValue);
+
+    })
+    return filterChamps;
+
+};
+
+
+export const typeFilter = (data, selectValue) => {
+    const roleChamps = data.filter(data => data.tags.includes(selectValue));
+    if (selectValue === 'all') {
+        return data;
+    } else {
+        return roleChamps;
+    }
+
 };

@@ -1,4 +1,4 @@
-import { order, searchFilter } from './data.js';
+import { order, searchFilter, typeFilter } from './data.js';
 import data from './data/lol/lol.js';
 const lol = Object.values(data.data); //se convierte el objeto a un array
 //console.log("arrayDatos", typeof(lol));
@@ -58,28 +58,11 @@ showRoles(lol);
 //Quinta historia: Barra de búsqueda (filtro)
 const barraBusqueda = document.getElementById('search');
 
+barraBusqueda.addEventListener('keyup', (e) => {
+    const input = e.target.value.toLowerCase();
+    showRoles(searchFilter(lol, input));
+});
 
-
-
-barraBusqueda.addEventListener('change', (e) => {
-    const inputString = e.target.value;
-    //console.log(inputString);
-    document.getElementById("dataLol").innerHTML = showRoles(searchFilter(lol, barraBusqueda.value));
-    console.log(barraBusqueda.value);
-    //showRoles(lol, inputString);
-
-})
-
-
-/*barraBusqueda.addEventListener('keyup', (e) => {
-    const inputString = e.target.value.toLowerCase();
-    const filtroCampeones = lol.filter((campeones) => {
-        //console.log(`${campeones.name}`);
-        //console.log(`${campeones.name}`.toLowerCase().includes(inputString));
-        return `${campeones.name}`.toLowerCase().includes(inputString);
-    });
-    showRoles(filtroCampeones);
-});*/
 
 
 
@@ -89,7 +72,7 @@ barraBusqueda.addEventListener('change', (e) => {
 const sortType = document.getElementById('orderByName');
 sortType.addEventListener('change', () => {
     showRoles(order(lol, sortType.value));
-})
+});
 
 
 
@@ -98,17 +81,10 @@ sortType.addEventListener('change', () => {
 // Septima historia : filtrar por rol
 
 const select = document.getElementById('selectorTag');
-
-select.addEventListener('change', takeValue);
-
-function takeValue() {
+select.addEventListener('change', () => {
     const value = select.value;
-    //console.log(value);
-    const champRoles = lol.filter(item => item.tags.includes(value))
-    if (value === 'all') {
-        showRoles(lol);
-    } else {
-        showRoles(champRoles);
-    }
+    showRoles(typeFilter(lol, value));
+});
 
-};
+
+// Pantalla modal: pop-up
