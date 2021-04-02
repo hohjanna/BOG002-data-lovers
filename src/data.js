@@ -1,6 +1,4 @@
-// Aquí van nuestras funciones: filter, sort
-
-
+// Aquí van las funciones
 
 export const order = (data, sortValue) => {
     const newArray = data.slice();
@@ -9,7 +7,9 @@ export const order = (data, sortValue) => {
         orderChamps = orderChamps.reverse();
 
     }
-    if (sortValue === 'ascendente') {}
+    if (sortValue === 'ascendente') {
+        return data;
+    }
 
     return orderChamps;
 };

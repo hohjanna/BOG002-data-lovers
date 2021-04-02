@@ -1,28 +1,25 @@
 import { order, searchFilter, typeFilter } from './data.js';
 import data from './data/lol/lol.js';
-const lol = Object.values(data.data); //se convierte el objeto a un array
-//console.log("arrayDatos", typeof(lol));
+const lol = Object.values(data.data); //devuelve un array con los valores correspondientes
+//console.log(typeof(lol));
 
 
 
 
-//Aquí va la manipulación del DOM
-
+//Esconder la segunda pantalla
 document.getElementById("screen-1").style = "display:normal"
-document.getElementById("screen-2").style = "display:none" //Esconder la segunda pantalla
+document.getElementById("screen-2").style = "display:none"
 
-const btnChooseRole = document.getElementById("btnData"); //Función botón elegir campeon
-btnChooseRole.addEventListener('click', btnData);
-
-function btnData() {
+//Botón elegir campeon
+const btnChooseRole = document.getElementById("btnData");
+btnChooseRole.addEventListener('click', () => {
     document.getElementById("screen-1").style = "display:none"
     document.getElementById("screen-2").style = "display:normal"
-}
+});
 
 
 
 // Segunda historia: mostrar todas las cartas de los personajes
-
 function showRoles(data) {
     const mainContainer = document.getElementById("dataLol");
     if (mainContainer.hasChildNodes()) {
@@ -52,9 +49,6 @@ showRoles(lol);
 
 
 
-
-
-
 //Quinta historia: Barra de búsqueda (filtro)
 const barraBusqueda = document.getElementById('search');
 
@@ -68,7 +62,6 @@ barraBusqueda.addEventListener('keyup', (e) => {
 
 
 //Sexta historia: Funcion sort A-Z Z-A
-
 const sortType = document.getElementById('orderByName');
 sortType.addEventListener('change', () => {
     showRoles(order(lol, sortType.value));
@@ -79,12 +72,8 @@ sortType.addEventListener('change', () => {
 
 
 // Septima historia : filtrar por rol
-
 const select = document.getElementById('selectorTag');
 select.addEventListener('change', () => {
     const value = select.value;
     showRoles(typeFilter(lol, value));
 });
-
-
-// Pantalla modal: pop-up
