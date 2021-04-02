@@ -5,12 +5,10 @@ export const order = (data, sortValue) => {
     let orderChamps = newArray.sort((a, b) => a.name > b.name ? 1 : -1);
     if (sortValue === 'descendente') {
         orderChamps = orderChamps.reverse();
-
     }
     if (sortValue === 'ascendente') {
         return data;
     }
-
     return orderChamps;
 };
 
@@ -18,10 +16,8 @@ export const order = (data, sortValue) => {
 export const searchFilter = (data, inputValue) => {
     const filterChamps = data.filter((data) => {
         return `${data.name}`.toLowerCase().includes(inputValue);
-
     })
     return filterChamps;
-
 };
 
 
@@ -32,5 +28,4 @@ export const typeFilter = (data, selectValue) => {
     } else {
         return roleChamps;
     }
-
 };
