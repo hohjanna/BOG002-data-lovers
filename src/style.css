@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* Header*/
 
 .container-shipping {
@@ -327,11 +333,25 @@ button:hover {
     text-align: center;
     font-family: 'Saira', sans-serif;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 30px;
     margin: 2px;
     color: black;
 }
 
+.card-difficulty {
+    text-align: center;
+    font-family: 'Saira', sans-serif;
+    font-size: 18px;
+    margin: 2px;
+    color: black;
+}
+
+/*Footer*/
+
+footer {
+    background: black;
+    width: 100%;
+}
 
 /* Opciones menú - Dispositivo Mobile */
 

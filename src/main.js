@@ -4,8 +4,6 @@ const lol = Object.values(data.data); //devuelve un array con los valores corres
 //console.log(typeof(lol));
 
 
-
-
 //Esconder la segunda pantalla
 document.getElementById("screen-1").style = "display:normal"
 document.getElementById("screen-2").style = "display:none"
@@ -16,8 +14,6 @@ btnChooseRole.addEventListener('click', () => {
     document.getElementById("screen-1").style = "display:none"
     document.getElementById("screen-2").style = "display:normal"
 });
-
-
 
 // Segunda historia: mostrar todas las cartas de los personajes
 function showRoles(data) {
@@ -35,18 +31,15 @@ function showRoles(data) {
             <div class="card-image" style="width: 16em;">
             <img src="${data[i].splash}" id="img" alt="splashChampion">
             <h2 class="card-title">${data[i].name}</h2>
+            <img src="Imagenes/Rectangulo.png" id="rectangle">
+            <p class="card-difficulty">Dificultad: ${data[i].info.difficulty}</p>
             </div>
         </div>`);
 
         mainContainer.appendChild(div);
-
     }
-
 }
-
 showRoles(lol);
-
-
 
 
 //Quinta historia: Barra de búsqueda (filtro)
@@ -59,15 +52,11 @@ barraBusqueda.addEventListener('keyup', (e) => {
 
 
 
-
-
 //Sexta historia: Funcion sort A-Z Z-A
 const sortType = document.getElementById('orderByName');
 sortType.addEventListener('change', () => {
     showRoles(order(lol, sortType.value));
 });
-
-
 
 
 

@@ -14,10 +14,10 @@ export const order = (data, sortValue) => {
 
 
 export const searchFilter = (data, inputValue) => {
-    const filterChamps = data.filter((data) => {
+       const filterChamps = data.filter((data) => {
         return `${data.name}`.toLowerCase().includes(inputValue);
-    })
-    return filterChamps;
+    }) 
+         return filterChamps;
 };
 
 
