@@ -7,12 +7,22 @@ const lol = Object.values(data.data); //devuelve un array con los valores corres
 //Esconder la segunda pantalla
 document.getElementById("screen-1").style = "display:normal"
 document.getElementById("screen-2").style = "display:none"
+document.getElementById("screen-3").style = "display:none"
 
 //Botón elegir campeon
 const btnChooseRole = document.getElementById("btnData");
 btnChooseRole.addEventListener('click', () => {
     document.getElementById("screen-1").style = "display:none"
     document.getElementById("screen-2").style = "display:normal"
+});
+
+//Botón ver estadísticas por dificultad
+
+const btnStats = document.getElementById("btn-stats");
+btnStats.addEventListener('click', () => {
+    document.getElementById("screen-2").style = "display:none"
+    document.getElementById("screen-3").style = "display:normal"
+
 });
 
 // Segunda historia: mostrar todas las cartas de los personajes
@@ -66,3 +76,53 @@ select.addEventListener('change', () => {
     const value = select.value;
     showRoles(typeFilter(lol, value));
 });
+
+
+
+//Queremos agrupar los campeones por dificultad: necesitamos obtener 10 grupos
+
+/*const champsByDifficulty = lol.reduce((acc, cur) => {
+        const level = cur.info.difficulty;
+        if (acc[level]) {
+            acc[level]++;
+        } else {
+            acc[level] = 1;
+        }
+        return acc;
+    }, {})
+    //console.log(champsByDifficulty);
+
+
+// Pasar objeto a un array para iterar
+const statsChamps = Object.values(champsByDifficulty);
+console.log(statsChamps);
+
+function percentage(groups) {
+    for (let i = 0; i < groups.length; i++) {
+
+
+    }
+}*/
+
+const groups = {};
+lol.forEach(champs => {
+    const groupLevel = champs.info.difficulty;
+    if (!groups[groupLevel]) groups[groupLevel] = [];
+    groups[groupLevel].push(champs);
+});
+
+const statsChamps = Object.values(groups); // array
+console.log(statsChamps);
+
+
+function percentage(x) {
+    const groupNumber = [];
+    for (let i = 0; i < x.length; i++) {
+        //console.log(x.length);
+        const result = (x.length[i] / 134) * 100;
+        //(result / 134) * 100;
+        groupNumber.push(result)
+    }
+
+}
+//console.log(percentage(statsChamps));
