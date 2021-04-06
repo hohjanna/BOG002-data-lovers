@@ -81,7 +81,7 @@ select.addEventListener('change', () => {
 
 //Queremos agrupar los campeones por dificultad: necesitamos obtener 10 grupos
 
-/*const champsByDifficulty = lol.reduce((acc, cur) => {
+const champsByDifficulty = lol.reduce((acc, cur) => {
         const level = cur.info.difficulty;
         if (acc[level]) {
             acc[level]++;
@@ -93,18 +93,30 @@ select.addEventListener('change', () => {
     //console.log(champsByDifficulty);
 
 
+
 // Pasar objeto a un array para iterar
 const statsChamps = Object.values(champsByDifficulty);
-console.log(statsChamps);
-
-function percentage(groups) {
-    for (let i = 0; i < groups.length; i++) {
+//console.log(statsChamps);
 
 
-    }
-}*/
 
-const groups = {};
+//Iterar cada número y sacarle el promedio
+
+const x = statsChamps;
+for (let i = 0; i < x.length; i++) {
+    console.log((x[i] / 134) * 100);
+}
+
+
+
+
+
+
+
+
+
+
+/*const groups = {};
 lol.forEach(champs => {
     const groupLevel = champs.info.difficulty;
     if (!groups[groupLevel]) groups[groupLevel] = [];
@@ -115,14 +127,15 @@ const statsChamps = Object.values(groups); // array
 console.log(statsChamps);
 
 
-function percentage(x) {
+function percentage() {
+    const x = statsChamps;
     const groupNumber = [];
     for (let i = 0; i < x.length; i++) {
         //console.log(x.length);
-        const result = (x.length[i] / 134) * 100;
+        const result = (x[i] / 134) * 100;
         //(result / 134) * 100;
         groupNumber.push(result)
     }
 
 }
-//console.log(percentage(statsChamps));
+console.log((x[i] / 134) * 100);*/
