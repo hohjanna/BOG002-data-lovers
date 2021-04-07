@@ -29,38 +29,38 @@ describe('searchFilter', () => {
         let arrayInput = searchFilter([], 'Zilean');
         assertEqual(arrayInput, ['Zilean']);
     });
-    
+
     it('should return only the searched array', () => {
         expect(searchFilter(lol, "Annie")).toHaveLength(0);
     });
-    
+
 });
 
 describe('typeFilter', () => {
     it('is a function', () => {
         expect(typeof typeFilter).toBe('function');
     });
-    
+
     it('should return all the champions by all value', () => {
         let array = typeFilter([], 'all');
         assertEqual(array, []);
     });
-    
+
     it('should return a filtered array by tags value', () => {
         let arrayFilter = typeFilter([], 'Fighter', 'Tank', 'Mage', 'Support', 'Assassin', 'Marksman');
         assertEqual(arrayFilter, ['Fighter', 'Tank', 'Mage', 'Support', 'Assassin', 'Marksman']);
     });
-    
+
     it('should return only the searched array', () => {
         let arrayInput = typeFilter([], 'Aatrox');
         assertEqual(arrayInput, ['Aatrox']);
     });
-    
+
     it('should return array with lowercase value', () => {
         let arrayInput = typeFilter([], 'aatrox');
         assertEqual(arrayInput, ['Aatrox']);
     });
-    
+
     it('should return array with special character value', () => {
         let arrayInput = typeFilter([], '.');
         assertEqual(arrayInput, ['Dr. Mundo']);

@@ -79,8 +79,11 @@ select.addEventListener('change', () => {
 
 
 
-//Queremos agrupar los campeones por dificultad: necesitamos obtener 10 grupos
 
+
+
+
+//Queremos agrupar los campeones por dificultad: necesitamos obtener 10 grupos
 const champsByDifficulty = lol.reduce((acc, cur) => {
         const level = cur.info.difficulty;
         if (acc[level]) {
@@ -93,49 +96,58 @@ const champsByDifficulty = lol.reduce((acc, cur) => {
     //console.log(champsByDifficulty);
 
 
-
-// Pasar objeto a un array para iterar
+//Pasar a un array
 const statsChamps = Object.values(champsByDifficulty);
 //console.log(statsChamps);
 
-
-
 //Iterar cada número y sacarle el promedio
-
 const x = statsChamps;
 for (let i = 0; i < x.length; i++) {
-    console.log((x[i] / 134) * 100);
-}
-
-
-
-
-
-
-
-
-
-
-/*const groups = {};
-lol.forEach(champs => {
-    const groupLevel = champs.info.difficulty;
-    if (!groups[groupLevel]) groups[groupLevel] = [];
-    groups[groupLevel].push(champs);
-});
-
-const statsChamps = Object.values(groups); // array
-console.log(statsChamps);
-
-
-function percentage() {
-    const x = statsChamps;
-    const groupNumber = [];
-    for (let i = 0; i < x.length; i++) {
-        //console.log(x.length);
-        const result = (x[i] / 134) * 100;
-        //(result / 134) * 100;
-        groupNumber.push(result)
+    const result = [];
+    const perNum = ((x[i] / 134) * 100).toFixed(2);
+    if (perNum) {
+        result.push(perNum);
     }
-
+    console.log(result);
+    //return result;
 }
-console.log((x[i] / 134) * 100);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Aquí se muestra la gráfica
+
+function chartDifficulty(ctx) {
+    const myChart = new Chart(ctx, {
+
+        type: 'bar',
+        data: {
+            labels: ['Dificultad: 1', 'Dificultad: 2', 'Dificultad: 3', 'Dificultad: 4', 'Dificultad: 5', 'Dificultad: 6', 'Dificultad: 7', 'Dificultad: 8', 'Dificultad: 9', 'Dificultad: 10'],
+            datasets: [{
+                label: '% de campeones por dificultad',
+                data: [1.49, 2.98, 10.44, 17.16, 15.67, 14.92, 14.92, 11.94, 6.71, 3.73],
+            }]
+        }
+
+    })
+};
+
+
+function renderChart() {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    chartDifficulty(ctx)
+}
+renderChart()
