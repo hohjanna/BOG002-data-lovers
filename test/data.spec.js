@@ -18,6 +18,19 @@ describe('order', () => {
         let arrayDes = order(['a', 'z'], 'descendente');
         assertEqual(arrayDes, ['z', 'a']);
     });
+
+    /*it('should return 1 if a > b', () => {
+        if (a.name > b.name) {
+            assertEqual('1');
+        }
+    });
+
+    it('should return -1 if a < b', () => {
+        //let arrayDes = order(['a', 'z'], 'descendente');
+        if (a.name < b.name) {
+            assertEqual('-1');
+        }
+    });*/
 });
 
 describe('searchFilter', () => {

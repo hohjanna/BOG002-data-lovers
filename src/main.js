@@ -1,7 +1,11 @@
-import { order, searchFilter, typeFilter } from './data.js';
+import { order, searchFilter, typeFilter, stats } from './data.js';
 import data from './data/lol/lol.js';
+//import Chart from './index/materialize.min.js';
 const lol = Object.values(data.data); //devuelve un array con los valores correspondientes
 //console.log(typeof(lol));
+
+
+
 
 
 //Esconder la segunda pantalla
@@ -9,7 +13,8 @@ document.getElementById("screen-1").style = "display:normal"
 document.getElementById("screen-2").style = "display:none"
 document.getElementById("screen-3").style = "display:none"
 
-//Botón elegir campeon
+
+//Botón Ver campeones
 const btnChooseRole = document.getElementById("btnData");
 btnChooseRole.addEventListener('click', () => {
     document.getElementById("screen-1").style = "display:none"
@@ -17,15 +22,14 @@ btnChooseRole.addEventListener('click', () => {
 });
 
 //Botón ver estadísticas por dificultad
-
 const btnStats = document.getElementById("btn-stats");
 btnStats.addEventListener('click', () => {
     document.getElementById("screen-2").style = "display:none"
     document.getElementById("screen-3").style = "display:normal"
-
 });
 
-// Segunda historia: mostrar todas las cartas de los personajes
+
+//Segunda historia: mostrar todas las cartas de los personajes
 function showRoles(data) {
     const mainContainer = document.getElementById("dataLol");
     if (mainContainer.hasChildNodes()) {
@@ -52,9 +56,8 @@ function showRoles(data) {
 showRoles(lol);
 
 
-//Quinta historia: Barra de búsqueda (filtro)
+//Tercera historia: Barra de búsqueda (filtro)
 const barraBusqueda = document.getElementById('search');
-
 barraBusqueda.addEventListener('keyup', (e) => {
     const input = e.target.value.toLowerCase();
     showRoles(searchFilter(lol, input));
@@ -62,7 +65,7 @@ barraBusqueda.addEventListener('keyup', (e) => {
 
 
 
-//Sexta historia: Funcion sort A-Z Z-A
+//Cuarta historia: Funcion sort A-Z Z-A
 const sortType = document.getElementById('orderByName');
 sortType.addEventListener('change', () => {
     showRoles(order(lol, sortType.value));
@@ -70,7 +73,7 @@ sortType.addEventListener('change', () => {
 
 
 
-// Septima historia : filtrar por rol
+//Quinta historia : filtrar por rol
 const select = document.getElementById('selectorTag');
 select.addEventListener('change', () => {
     const value = select.value;
@@ -79,75 +82,26 @@ select.addEventListener('change', () => {
 
 
 
-
-
-
-
-//Queremos agrupar los campeones por dificultad: necesitamos obtener 10 grupos
-const champsByDifficulty = lol.reduce((acc, cur) => {
-        const level = cur.info.difficulty;
-        if (acc[level]) {
-            acc[level]++;
-        } else {
-            acc[level] = 1;
-        }
-        return acc;
-    }, {})
-    //console.log(champsByDifficulty);
-
-
-//Pasar a un array
-const statsChamps = Object.values(champsByDifficulty);
-//console.log(statsChamps);
-
-//Iterar cada número y sacarle el promedio
-const x = statsChamps;
-for (let i = 0; i < x.length; i++) {
-    const result = [];
-    const perNum = ((x[i] / 134) * 100).toFixed(2);
-    if (perNum) {
-        result.push(perNum);
-    }
-    console.log(result);
-    //return result;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Aquí se muestra la gráfica
-
-function chartDifficulty(ctx) {
-    const myChart = new Chart(ctx, {
-
+// Sexta historia: generar procentaje de campeones por dificultad
+function chartDifficulty(ctx, dataValue) {
+    let myChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['Dificultad: 1', 'Dificultad: 2', 'Dificultad: 3', 'Dificultad: 4', 'Dificultad: 5', 'Dificultad: 6', 'Dificultad: 7', 'Dificultad: 8', 'Dificultad: 9', 'Dificultad: 10'],
             datasets: [{
                 label: '% de campeones por dificultad',
-                data: [1.49, 2.98, 10.44, 17.16, 15.67, 14.92, 14.92, 11.94, 6.71, 3.73],
+                data: dataValue,
             }]
         }
 
     })
-};
+    return myChart;
+}
 
 
 function renderChart() {
+    const values = stats(lol)
     const ctx = document.getElementById('myChart').getContext('2d');
-    chartDifficulty(ctx)
+    chartDifficulty(ctx, values)
 }
 renderChart()

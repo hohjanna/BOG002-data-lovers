@@ -1,8 +1,9 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 
 /* Header*/
 
@@ -312,6 +313,13 @@ button:hover {
 }
 
 
+/*Screen 3*/
+
+#stats {
+    width: 70%;
+}
+
+
 /*Estilos template js*/
 
 #img {
@@ -346,12 +354,14 @@ button:hover {
     color: black;
 }
 
+
 /*Footer*/
 
 footer {
     background: black;
     width: 100%;
 }
+
 
 /* Opciones menú - Dispositivo Mobile */
 

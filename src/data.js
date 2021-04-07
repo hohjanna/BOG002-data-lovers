@@ -14,10 +14,10 @@ export const order = (data, sortValue) => {
 
 
 export const searchFilter = (data, inputValue) => {
-       const filterChamps = data.filter((data) => {
+    const filterChamps = data.filter((data) => {
         return `${data.name}`.toLowerCase().includes(inputValue);
-    }) 
-         return filterChamps;
+    })
+    return filterChamps;
 };
 
 
@@ -28,4 +28,20 @@ export const typeFilter = (data, selectValue) => {
     } else {
         return roleChamps;
     }
+};
+
+export const stats = (data) => {
+    const champsByDifficulty = data.reduce((acc, cur) => {
+        const level = cur.info.difficulty;
+        if (acc[level]) {
+            acc[level]++;
+        } else {
+            acc[level] = 1;
+        }
+        return acc;
+    }, [])
+
+    const percentage = num => ((num / 134) * 100).toFixed(2);
+    const result = champsByDifficulty.map(percentage);
+    return result;
 };
