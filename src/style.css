@@ -313,13 +313,6 @@ button:hover {
 }
 
 
-/*Screen 3*/
-
-#stats {
-    width: 70%;
-}
-
-
 /*Estilos template js*/
 
 #img {
@@ -354,14 +347,64 @@ button:hover {
     color: black;
 }
 
+/*Screen 3*/
+
+#title-screen3 {
+    background-color: white;
+    text-align: center;
+    font-family: 'Saira', sans-serif;
+    font-size: 25px;
+    color: black;
+    padding: 3%;
+}
+
+#stats {
+    width: 50%;
+    background-color: white;
+    margin: 0% 25% 0% 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#miChart {
+    width: 70%;
+}
+
+#text-stats {
+    text-align: center;
+    font-family: 'Saira', sans-serif;
+    font-size: 20px;
+    margin: 10px 0px 10px 0px;
+}
 
 /*Footer*/
 
 footer {
     background: black;
     width: 100%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
 }
 
+#social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#youtube, #mixer, #twich {
+    margin: 0px 20px 0px 20px;
+}
+
+#text-footer {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    color: rgb(99, 99, 99);
+    text-align: center;
+    margin: 6px 0px 0px 0px;
+}
 
 /* Opciones menú - Dispositivo Mobile */
 

@@ -2,10 +2,6 @@ import { order, searchFilter, typeFilter, stats } from './data.js';
 import data from './data/lol/lol.js';
 //import Chart from './index/materialize.min.js';
 const lol = Object.values(data.data); //devuelve un array con los valores correspondientes
-//console.log(typeof(lol));
-
-
-
 
 
 //Esconder la segunda pantalla
@@ -21,6 +17,7 @@ btnChooseRole.addEventListener('click', () => {
     document.getElementById("screen-2").style = "display:normal"
 });
 
+
 //Botón ver estadísticas por dificultad
 const btnStats = document.getElementById("btn-stats");
 btnStats.addEventListener('click', () => {
@@ -29,7 +26,7 @@ btnStats.addEventListener('click', () => {
 });
 
 
-//Segunda historia: mostrar todas las cartas de los personajes
+//Segunda historia: Mostrar todas las cartas de los personajes
 function showRoles(data) {
     const mainContainer = document.getElementById("dataLol");
     if (mainContainer.hasChildNodes()) {
@@ -64,13 +61,11 @@ barraBusqueda.addEventListener('keyup', (e) => {
 });
 
 
-
 //Cuarta historia: Funcion sort A-Z Z-A
 const sortType = document.getElementById('orderByName');
 sortType.addEventListener('change', () => {
     showRoles(order(lol, sortType.value));
 });
-
 
 
 //Quinta historia : filtrar por rol
@@ -81,23 +76,44 @@ select.addEventListener('change', () => {
 });
 
 
-
 // Sexta historia: generar procentaje de campeones por dificultad
 function chartDifficulty(ctx, dataValue) {
     let myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Dificultad: 1', 'Dificultad: 2', 'Dificultad: 3', 'Dificultad: 4', 'Dificultad: 5', 'Dificultad: 6', 'Dificultad: 7', 'Dificultad: 8', 'Dificultad: 9', 'Dificultad: 10'],
+            labels: [
+                'Dificultad: 1', 
+                'Dificultad: 2', 
+                'Dificultad: 3', 
+                'Dificultad: 4', 
+                'Dificultad: 5', 
+                'Dificultad: 6', 
+                'Dificultad: 7', 
+                'Dificultad: 8', 
+                'Dificultad: 9', 
+                'Dificultad: 10'
+            ],
             datasets: [{
-                label: '% de campeones por dificultad',
                 data: dataValue,
+                label: '% de campeones',
+                backgroundColor: [
+                    "#C6AEEB", 
+                    "#AFA945", 
+                    "#9DA5C8", 
+                    "#7CDFE8", 
+                    "#EAAAC3", 
+                    "#C98DD3", 
+                    "#7CA5F5", 
+                    "#F2CA9A", 
+                    "#82C960", 
+                    "#96EEDE",
+                ]
+                
             }]
         }
-
     })
     return myChart;
 }
-
 
 function renderChart() {
     const values = stats(lol)

@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@500&display=swap" rel="stylesheet">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>-->
-    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>-->
-
-
-
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,500&family=Fjalla+One&family=Oswald&display=swap" rel="stylesheet"> 
+    
 </head>
+
 
 <body>
 
@@ -56,45 +55,19 @@
             </div>
         </div>
 
-        <!-- Historia de usuario 2 : Roles de LoL -->
-        <!--<div id="screen-secondPart">
-            <div id="container-roles">
-                <h1 id="title-roles">Roles</h1>
-                <p id="roles-text">Saber elegir tu rol es fundamental para mejorar tus habilidades en el campo de batalla.<br> Cada rol tiene diferentes campeones</p>
-                <img src="Imagenes/Rol Mago.png">
-                <img src="Imagenes/Rol Tirador.png">
-                <img src="Imagenes/Rol Luchador.png">
-                <img src="Imagenes/Rol Asesino.png">
-                <img src="Imagenes/Rol Tanque.png">
-                <img src="Imagenes/Rol Apoyo.png">
-            </div>
-
-             Historia de usuario 3 : Mapa de posiciones 
-            <div id="container-map">
-                <h1 id="title-map">Mapa</h1>
-                <p id="map-text">Explora cada posición para averiguar cual zona se sitúa mas a tu nivel</p>
-                <img id="map-small" src="Imagenes/Mapa pequeño.png">
-                <a id="btnDataMap" href="#">Elegir campeón</a>
-                <div id="social-media">
-                    <img src="Imagenes/Logo Youtube.png">
-                    <img src="Imagenes/Logo Twich.png">
-                    <img src="Imagenes/Logo Mixer.png">
-                </div>
-            </div>
-
-
-        </div>-->
-
     </section>
 
-    <!-- Historia de usuario 4 : Display Campeones -->
+    <!-- Historia de usuario 2 : Display Campeones -->
     <section id="screen-2">
         <div id="father-container">
             <div id="buttons-container">
+
+                <!-- Historia de usuario 3 : Barra de Busqueda -->
                 <div>
-                    <input id="search" placeholder="Busca tu campeón" type="search" />
+                    <input id="search" placeholder="Busca tu campeón" type="search" /> 
                 </div>
 
+                <!-- Historia de usuario 4 : Organizar ascendente y descendente -->
                 <div id="sortButton">
                     <select name="order" id="orderByName">
                         <option value="" disabled selected>Ordenar por nombre</option>
@@ -102,7 +75,8 @@
                         <option value="descendente">Z-A</option>
                     </select>
                 </div>
-
+                
+                <!-- Historia de usuario 5 : Filtrar ppor categoría -->
                 <div id="filterButton">
                     <select name="types" id="selectorTag">
                         <option value="" disabled selected>Filtrar por rol</option>
@@ -130,9 +104,15 @@
 
     <!-- Historia de usuario 6 : Estadísticas -->
     <section id="screen-3">
-        <div id="stats">
-            <canvas id="myChart" width="400" height="300"></canvas>
+        <div id="title-screen3">
+        <h1>Porcentaje de campeones por nivel de dificultad</h1>
         </div>
+
+        <div id="stats">
+            <canvas id="myChart" width="200" height="100"></canvas>
+        </div>
+        <p id=text-stats>El mayor número de campeones se ubican en el nivel de dificultad 4 con 17.16%<br>
+            El menor número de campeones se ubican en el nivel de dificultad 1 con 1.49%</p>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
@@ -140,19 +120,16 @@
 
     <script src="main.js" type="module"></script>
 
-
-
 </body>
 
 
-
-<!--<footer>
+<footer>
     <div id="social-media">
-        <img src="Imagenes/Logo Youtube.png">
-        <img src="Imagenes/Logo Twich.png">
-        <img src="Imagenes/Logo Mixer.png">
+        <div id="youtube"><img src="Imagenes/Logo Youtube.png"></div>
+        <div id="twich"><img src="Imagenes/Logo Twich.png"></div>
+        <div id="mixer"><img src="Imagenes/Logo Mixer.png"></div>
     </div>
-
-</footer>-->
+    <div id="text-footer"><p>© Hohjanna &amp; Milena &lt;Data Lovers.Laboratoria&gt;</p></div>
+</footer>
 
 </html>
