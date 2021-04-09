@@ -1,19 +1,8 @@
-// Aquí van las funciones
+//Here are all the functions
 
-// Funcion ordenar ascendente descendente
-export const order = (data, sortValue) => {
-    const newArray = data.slice();
-    let orderChamps = newArray.sort((a, b) => a.name > b.name ? 1 : -1);
-    if (sortValue === 'descendente') {
-        orderChamps = orderChamps.reverse();
-    }
-    if (sortValue === 'ascendente') {
-        return data;
-    }
-    return orderChamps;
-};
 
-//Funcion barra de busqueda
+
+//#3 Story: Search the champions' names
 export const searchFilter = (data, inputValue) => {
     const filterChamps = data.filter((data) => {
         return `${data.name}`.toLowerCase().includes(inputValue);
@@ -21,7 +10,24 @@ export const searchFilter = (data, inputValue) => {
     return filterChamps;
 };
 
-//Funcion filtrar por roles
+
+
+//#4 Story: Sort names 
+export const sortNames = (data, sortValue) => {
+    const newArray = data.slice();
+    let orderChamps = newArray.sort((a, b) => a.name > b.name ? 1 : -1);
+    if (sortValue === 'ZA') {
+        orderChamps = orderChamps.reverse();
+    }
+    if (sortValue === 'AZ') {
+        return data;
+    }
+    return orderChamps;
+};
+
+
+
+//#5 Story: Filter the champions' roles
 export const typeFilter = (data, selectValue) => {
     const roleChamps = data.filter(data => data.tags.includes(selectValue));
     if (selectValue === 'all') {
@@ -31,7 +37,9 @@ export const typeFilter = (data, selectValue) => {
     }
 };
 
-//Funcion estadistica
+
+
+//#6 Story: Display the champions' difficulty by percentage
 export const stats = (data) => {
     const champsByDifficulty = data.reduce((acc, cur) => {
         const level = cur.info.difficulty;

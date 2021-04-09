@@ -1,32 +1,32 @@
-import { order, searchFilter, typeFilter, stats } from './data.js';
+import { searchFilter, sortNames, typeFilter, stats } from './data.js';
 import data from './data/lol/lol.js';
-//import Chart from './index/materialize.min.js';
-const lol = Object.values(data.data); //devuelve un array con los valores correspondientes
+const lol = Object.values(data.data); //Return [] with lol's values
 
 
-//Esconder la segunda pantalla
+
+//Hide the 2nd screen
 document.getElementById("screen-1").style = "display:normal"
 document.getElementById("screen-2").style = "display:none"
 document.getElementById("screen-3").style = "display:none"
 
-
-//Botón Ver campeones
+//Button (Ver campeones)
 const btnChooseRole = document.getElementById("btnData");
 btnChooseRole.addEventListener('click', () => {
     document.getElementById("screen-1").style = "display:none"
     document.getElementById("screen-2").style = "display:normal"
 });
 
-
-//Botón ver estadísticas por dificultad
+//Button (Campeones por dificultad)
 const btnStats = document.getElementById("btn-stats");
 btnStats.addEventListener('click', () => {
+    renderChart() //call the function that shows the Chart when clicking
     document.getElementById("screen-2").style = "display:none"
     document.getElementById("screen-3").style = "display:normal"
 });
 
 
-//Segunda historia: Mostrar todas las cartas de los personajes
+
+//#2 Story: Display all the Champions
 function showRoles(data) {
     const mainContainer = document.getElementById("dataLol");
     if (mainContainer.hasChildNodes()) {
@@ -53,7 +53,8 @@ function showRoles(data) {
 showRoles(lol);
 
 
-//Tercera historia: Barra de búsqueda (filtro)
+
+//#3 Story: Search the champions' names
 const barraBusqueda = document.getElementById('search');
 barraBusqueda.addEventListener('keyup', (e) => {
     const input = e.target.value.toLowerCase();
@@ -61,14 +62,16 @@ barraBusqueda.addEventListener('keyup', (e) => {
 });
 
 
-//Cuarta historia: Funcion sort A-Z Z-A
+
+//#4 Story: Sort names (AZ - ZA)
 const sortType = document.getElementById('orderByName');
 sortType.addEventListener('change', () => {
-    showRoles(order(lol, sortType.value));
+    showRoles(sortNames(lol, sortType.value));
 });
 
 
-//Quinta historia : filtrar por rol
+
+//#5 Story: Filter the champions' roles
 const select = document.getElementById('selectorTag');
 select.addEventListener('change', () => {
     const value = select.value;
@@ -76,43 +79,48 @@ select.addEventListener('change', () => {
 });
 
 
-// Sexta historia: generar procentaje de campeones por dificultad
+
+//#6 Story: Display the champions' difficulty by percentage
 function chartDifficulty(ctx, dataValue) {
-    let myChart = new Chart(ctx, {
+    /*if (typeof Chart === 'undefined') {
+        var Chart = {};
+    }*/
+    new Chart(ctx, {
         type: 'bar',
         data: {
             labels: [
-                'Dificultad: 1', 
-                'Dificultad: 2', 
-                'Dificultad: 3', 
-                'Dificultad: 4', 
-                'Dificultad: 5', 
-                'Dificultad: 6', 
-                'Dificultad: 7', 
-                'Dificultad: 8', 
-                'Dificultad: 9', 
+                'Dificultad: 1',
+                'Dificultad: 2',
+                'Dificultad: 3',
+                'Dificultad: 4',
+                'Dificultad: 5',
+                'Dificultad: 6',
+                'Dificultad: 7',
+                'Dificultad: 8',
+                'Dificultad: 9',
                 'Dificultad: 10'
             ],
             datasets: [{
                 data: dataValue,
                 label: '% de campeones',
                 backgroundColor: [
-                    "#C6AEEB", 
-                    "#AFA945", 
-                    "#9DA5C8", 
-                    "#7CDFE8", 
-                    "#EAAAC3", 
-                    "#C98DD3", 
-                    "#7CA5F5", 
-                    "#F2CA9A", 
-                    "#82C960", 
+                    "#C6AEEB",
+                    "#AFA945",
+                    "#9DA5C8",
+                    "#7CDFE8",
+                    "#EAAAC3",
+                    "#C98DD3",
+                    "#7CA5F5",
+                    "#F2CA9A",
+                    "#82C960",
                     "#96EEDE",
                 ]
-                
+
             }]
         }
     })
-    return myChart;
+
+
 }
 
 function renderChart() {
@@ -120,4 +128,3 @@ function renderChart() {
     const ctx = document.getElementById('myChart').getContext('2d');
     chartDifficulty(ctx, values)
 }
-renderChart()

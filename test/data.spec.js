@@ -1,36 +1,31 @@
-import { order, searchFilter, typeFilter } from '../src/data.js';
+import { sortNames, searchFilter, typeFilter } from '../src/data.js';
 import data from '../src/data/lol/lol.js';
 const lol = Object.values(data.data);
 let assertEqual = require('assert');
 
 
-describe('order', () => {
+describe('sort', () => {
     it('is a function', () => {
-        expect(typeof order).toBe('function');
+        expect(typeof sortNames).toBe('function');
     });
 
     it('must sort champions from a to z', () => {
-        let arrayAs = order(['a', 'z'], 'ascendente');
+        let arrayAs = sortNames(['a', 'z'], 'AZ');
         assertEqual(arrayAs, ['a', 'z']);
     });
 
     it('must sort champions from z to a', () => {
-        let arrayDes = order(['a', 'z'], 'descendente');
+        let arrayDes = sortNames(['a', 'z'], 'ZA');
         assertEqual(arrayDes, ['z', 'a']);
     });
 
-    /*it('should return 1 if a > b', () => {
-        if (a.name > b.name) {
+    it('should return 1 if a > b', () => {
+        let a = 1;
+        let b = 0;
+        if (a > b) {
             assertEqual('1');
         }
     });
-
-    it('should return -1 if a < b', () => {
-        //let arrayDes = order(['a', 'z'], 'descendente');
-        if (a.name < b.name) {
-            assertEqual('-1');
-        }
-    });*/
 });
 
 describe('searchFilter', () => {
