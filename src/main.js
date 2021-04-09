@@ -81,11 +81,10 @@ select.addEventListener('change', () => {
 
 
 //#6 Story: Display the champions' difficulty by percentage
-function chartDifficulty(ctx, dataValue) {
-    /*if (typeof Chart === 'undefined') {
-        var Chart = {};
-    }*/
-    new Chart(ctx, {
+function renderChart() {
+    let values = stats(lol)
+    let ctx = document.getElementById('myChart').getContext('2d');
+    new window.Chart(ctx, {
         type: 'bar',
         data: {
             labels: [
@@ -101,7 +100,7 @@ function chartDifficulty(ctx, dataValue) {
                 'Dificultad: 10'
             ],
             datasets: [{
-                data: dataValue,
+                data: values,
                 label: '% de campeones',
                 backgroundColor: [
                     "#C6AEEB",
@@ -119,12 +118,4 @@ function chartDifficulty(ctx, dataValue) {
             }]
         }
     })
-
-
-}
-
-function renderChart() {
-    const values = stats(lol)
-    const ctx = document.getElementById('myChart').getContext('2d');
-    chartDifficulty(ctx, values)
 }
