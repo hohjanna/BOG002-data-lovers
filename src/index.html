@@ -18,7 +18,7 @@
 
 <body>
 
-    <!-- Contenedor de Navegación -->
+    <!-- Navigation Container -->
     <header>
         <div class="container-shipping">
 
@@ -26,7 +26,7 @@
                 <img src="Imagenes/Logo.png" alt="Logo - Lol">
             </div>
 
-            <div class="nav">
+            <!--<div class="nav">
                 <nav>
                     <ul class="menu">
                         <li class="item">
@@ -40,35 +40,42 @@
                         <li class="toggle"><span class="barsMenu"></span></li>
                     </ul>
                 </nav>
-
-            </div>
+            </div>-->
         </div>
     </header>
 
 
-    <!-- Historia de usuario 1 : Banner descriptivo -->
+    <!-- #1 Story: Descriptive banner -->
     <section id="screen-1">
         <div>
-            <div class="background-image"><img src="Imagenes/fondo.svg">
-                <div id="image-league"><img src="Imagenes/league2.png"></div>
+            <picture class="background-image">
+                    <source media="(max-width: 500px)" srcset="Imagenes/ImagenFondoMobile.png"> 
+                    <source media="(max-width: 870px)" srcset="Imagenes/ImagenFondoTablet.png">
+                    <source media="(max-width: 1280px)" srcset="Imagenes/ImagenFondo2.png"> 
+                <img  src="Imagenes/ImagenFondo.png">
+            </picture>
+                
+            <picture id="image-league">
+                    <source media="(max-width: 870px)" srcset="Imagenes/leagueTablet.png">
+                <img src="Imagenes/league2.png">
+            </picture>                               
                 <p id="initial-text">Juego de estrategia en línea donde dos equipos de 5 campeones trabajan juntos para destruir la base del equipo contrario</p>
-                <a id="btnData" href="#">Elegir campeón</a>
-            </div>
+                <a id="btnData" href="#">Elegir campeón</a>            
         </div>
 
     </section>
 
-    <!-- Historia de usuario 2 : Display Campeones -->
+    <!-- #2 Story: Display Champions -->
     <section id="screen-2">
         <div id="father-container">
             <div id="buttons-container">
 
-                <!-- Historia de usuario 3 : Barra de Busqueda -->
+                <!-- #3 Story: Search bar -->
                 <div>
                     <input id="search" placeholder="Busca tu campeón" type="search" />
                 </div>
 
-                <!-- Historia de usuario 4 : Organizar ascendente y descendente -->
+                <!-- #4 Story: Organize ascending and descending -->
                 <div id="sortButton">
                     <select name="order" id="orderByName">
                         <option value="" disabled selected>Ordenar por nombre</option>
@@ -77,7 +84,7 @@
                     </select>
                 </div>
 
-                <!-- Historia de usuario 5 : Filtrar ppor categoría -->
+                <!-- #5 Story : Filter by category -->
                 <div id="filterButton">
                     <select name="types" id="selectorTag">
                         <option value="" disabled selected>Filtrar por rol</option>
@@ -103,7 +110,7 @@
 
     </section>
 
-    <!-- Historia de usuario 6 : Estadísticas -->
+    <!-- #6 Story : Stats -->
     <section id="screen-3">
         <div id="title-screen3">
             <h1>Porcentaje de campeones por nivel de dificultad</h1>
@@ -111,7 +118,10 @@
         <div id="stats">
             <canvas id="myChart" width="200" height="100"></canvas>
         </div>
-        <p id="text-stats">El mayor número de campeones se ubican en el nivel de dificultad 4 con 17.16%<br> El menor número de campeones se ubican en el nivel de dificultad 1 con 1.49%</p>
+        <p id="text-stats">El mayor número de campeones se ubica en el nivel de dificultad 4 con 17.16%<br> El menor número de campeones se ubica en el nivel de dificultad 1 con 1.49%</p>
+        <div id="container-back">
+            <button id="btn-back" ><img src="Imagenes/back-button.png"></button>
+        </div> 
     </section>
 
     <script src="main.js" type="module"></script>

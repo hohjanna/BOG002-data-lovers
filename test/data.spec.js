@@ -1,4 +1,4 @@
-import { sortNames, searchFilter, typeFilter } from '../src/data.js';
+import { sortNames, searchFilter, typeFilter, stats } from '../src/data.js';
 import data from '../src/data/lol/lol.js';
 const lol = Object.values(data.data);
 let assertEqual = require('assert');
@@ -19,14 +19,20 @@ describe('sort', () => {
         assertEqual(arrayDes, ['z', 'a']);
     });
 
-    it('should return 1 if a > b', () => {
-        let a = 1;
-        let b = 0;
-        if (a > b) {
-            assertEqual('1');
-        }
+    it('should return true if a > b', () => {
+        let champsName = [{
+                name: 'Aatrox',
+            },
+            {
+                name: 'Ahri',
+            }
+        ];
+        let arrTrue = sortNames(champsName);
+        assertEqual(arrTrue, ['Aatrox', 'Ahri']);
     });
+
 });
+
 
 describe('searchFilter', () => {
     it('is a function', () => {
@@ -40,6 +46,21 @@ describe('searchFilter', () => {
 
     it('should return only the searched array', () => {
         expect(searchFilter(lol, "Annie")).toHaveLength(0);
+    });
+
+    it('should return only the searched array', () => {
+        let arrayInput = typeFilter([], 'Aatrox');
+        assertEqual(arrayInput, ['Aatrox']);
+    });
+
+    it('should return array with lowercase value', () => {
+        let arrayInput = typeFilter([], 'aatrox');
+        assertEqual(arrayInput, ['Aatrox']);
+    });
+
+    it('should return array with special character value', () => {
+        let arrayInput = typeFilter([], '.');
+        assertEqual(arrayInput, ['Dr. Mundo']);
     });
 
 });
@@ -59,18 +80,44 @@ describe('typeFilter', () => {
         assertEqual(arrayFilter, ['Fighter', 'Tank', 'Mage', 'Support', 'Assassin', 'Marksman']);
     });
 
-    it('should return only the searched array', () => {
-        let arrayInput = typeFilter([], 'Aatrox');
-        assertEqual(arrayInput, ['Aatrox']);
+    it('should return Aatrox when select Tank', () => {
+        let select = 'Tank';
+        let champsType = [{
+                name: 'Aatrox',
+                tags: ["Fighter", "Tank"]
+            },
+            {
+                name: 'Ahri',
+                tags: ["Mage", "Assassin"]
+            }
+        ];
+        let includeValue = typeFilter(champsType, select);
+        assertEqual(includeValue, 'Aatrox');
     });
 
-    it('should return array with lowercase value', () => {
-        let arrayInput = typeFilter([], 'aatrox');
-        assertEqual(arrayInput, ['Aatrox']);
+});
+
+describe('stats', () => {
+    it('is a function', () => {
+        expect(typeof stats).toBe('function');
     });
 
-    it('should return array with special character value', () => {
-        let arrayInput = typeFilter([], '.');
-        assertEqual(arrayInput, ['Dr. Mundo']);
+    it('must group the champions by difficulty', () => {
+        let champsLevel = [{
+                name: 'Aatrox',
+                info: { difficulty: 1 }
+            },
+            {
+                name: 'Ashe',
+                info: { difficulty: 1 }
+            },
+            {
+                name: 'Bard',
+                info: { difficulty: 2 }
+            }
+        ];
+
+        let groupBy = stats(champsLevel);
+        assertEqual(groupBy, [2, 1]);
     });
 });

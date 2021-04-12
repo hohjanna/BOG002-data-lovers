@@ -24,6 +24,14 @@ btnStats.addEventListener('click', () => {
     document.getElementById("screen-3").style = "display:normal"
 });
 
+//Button (Regresar)
+const btnBack = document.getElementById("btn-back");
+btnBack.addEventListener('click', () => {
+    document.getElementById("screen-2").style = "display:normal"
+    document.getElementById("screen-3").style = "display:none"
+
+});
+
 
 
 //#2 Story: Display all the Champions

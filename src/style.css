@@ -2,8 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
+} 
 
 /* Header*/
 
@@ -11,12 +10,18 @@
     background: black;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
     align-items: center;
+    justify-content: space-between;
 }
 
-.nav {
-    width: 40%;
+.logo {
+    width: 50%;
+    margin: 1vw 1vw 1vw 8vw;
+}
+
+/*.nav {
+    width: 50%;
 }
 
 ul {
@@ -28,7 +33,7 @@ li {
 }
 
 .menu li {
-    padding: 15px 20px;
+    padding: 15px 10px;
     font-family: 'Saira', sans-serif;
     font-weight: 500;
     font-size: 18px;
@@ -36,11 +41,6 @@ li {
 
 .menu li a {
     display: block;
-}
-
-.logo {
-    width: 20%;
-    margin: 1vw 1vw 1vw 5vw;
 }
 
 h2 {
@@ -53,26 +53,6 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-
-.toggle {
-    order: 1;
-    cursor: pointer;
-}
-
-.item.button {
-    order: 2;
-}
-
-.item {
-    width: 100%;
-    text-align: center;
-    order: 3;
-    display: none;
-}
-
-.item.active {
-    display: block;
 }
 
 
@@ -95,17 +75,16 @@ img {
 
 #image-league {
     position: absolute;
-    left: 15%;
+    left: 8%;
     top: 180px;
 }
 
 #initial-text {
-    /*max-width: 60%;*/
     position: absolute;
     width: 600px;
     height: 137px;
-    left: 15%;
-    top: 400px;
+    left: 9%;
+    top: 450px;
     font-family: 'Saira', sans-serif;
     font-size: 26px;
     line-height: 45px;
@@ -116,13 +95,12 @@ img {
     position: absolute;
     width: 271px;
     height: 64px;
-    left: 18%;
-    top: 595px;
+    left: 7%;
+    top: 620px;
     margin: 40px;
     display: inline-block;
     color: #000000;
     text-decoration: none;
-    text-align: center;
     border: 2px solid #000000;
     font-family: 'Saira', sans-serif;
     font-weight: bold;
@@ -140,95 +118,11 @@ img {
 }
 
 
-/*Screen 1.2*/
-
-#screen-secondPart {
-    display: flex;
-    flex-direction: row;
-}
-
-#container-roles {
-    background-color: white;
-    width: 60%;
-    display: grid;
-}
-
-#title-roles {
-    margin: 3%;
-    color: black;
-    font-family: 'Saira', sans-serif;
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center;
-}
-
-#roles-text {
-    color: black;
-    font-family: 'Saira', sans-serif;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    margin: 0%;
-}
-
-#container-map {
-    background-color: black;
-    width: 40%;
-}
-
-#title-map {
-    margin: 5%;
-    color: white;
-    font-family: 'Saira', sans-serif;
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center;
-}
-
-#map-text {
-    color: white;
-    font-family: 'Saira', sans-serif;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
-    margin: 0% 15% 0% 15%;
-}
-
-#map-small {
-    margin: 10% 0% 0% 0%;
-}
-
-#btnDataMap {
-    width: 271px;
-    left: 18%;
-    top: 555px;
-    margin: 40px;
-    display: inline-block;
-    color: #000000;
-    text-decoration: none;
-    text-align: center;
-    border: 2px solid #000000;
-    font-family: 'Saira', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 64px;
-    text-align: center;
-    color: #000000;
-    background: #d4a94c;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-}
-
-#btnDataMap:hover {
-    background: #06DAF6;
-}
-
-
 /*Screen 2*/
 
 #screen-2 {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     background-color: black;
@@ -236,12 +130,13 @@ img {
 
 #buttons-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     margin: 2%;
 }
 
-button {
+#btn-stats {
     width: 210px;
     height: 35px;
     background: black;
@@ -252,9 +147,10 @@ button {
     margin: 5px;
     font-family: 'Saira', sans-serif;
     font-size: 15px;
+    cursor: pointer;
 }
 
-button:hover {
+#btn-stats:hover {
     background: #06DAF6;
     color: black;
     border: 2px solid #06DAF6;
@@ -356,20 +252,17 @@ button:hover {
     font-family: 'Saira', sans-serif;
     font-size: 25px;
     color: black;
-    padding: 3%;
+    padding: 2%;
 }
 
 #stats {
-    width: 50%;
+    width: 60%;
+    height: 30%;
     background-color: white;
-    margin: 0% 25% 0% 25%;
+    margin: 0% 20% 0% 20%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-#miChart {
-    width: 70%;
 }
 
 #text-stats {
@@ -377,6 +270,16 @@ button:hover {
     font-family: 'Saira', sans-serif;
     font-size: 20px;
     margin: 10px 0px 10px 0px;
+}
+
+#container-back {
+    display: flex;
+    justify-content: center;
+}
+
+#btn-back {
+    margin: 0% 0% 1% 0%;
+    cursor: pointer;
 }
 
 
@@ -388,6 +291,7 @@ footer {
     padding: 1%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 #social-media {
@@ -411,58 +315,165 @@ footer {
 }
 
 
-/* Opciones menú - Dispositivo Mobile */
+/* Responsive laptop*/
 
-@media screen and (min-width:
-/*468px*/
+@media screen and (max-width: 1280px) {
 
-320px) {
-    .menu {
+    #image-league {
+        left: 3%;
+        top: 160px;
+    }
+    
+    #initial-text {
+        width: 520px;
+        height: 137px;
+        left: 5%;
+        top: 380px;
+        font-size: 22px;
+        line-height: 45px;
+    }
+    
+    #btnData {
+        left: 2%;
+        top: 490px;        
+    }
+    
+        .row {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    }
+       
+    #stats {
+        width: 70%;
+        margin: 0% 15% 0% 15%;
+    }
+}
+
+/* Responsive tablet*/
+
+@media screen and (max-width: 870px) {
+
+    .logo {
+        width: 50%;
+        margin: 1vw 1vw 1vw 2vw;
+    }
+
+    #image-league {
+        top: 230px;
+        left: 6%;
+    }
+    
+    #initial-text {
+        width: 330px;
+        height: 137px;
+        left: 8%;
+        top: 370px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+    
+    #btnData {
+        width: 221px;
+        height: 64px;
+        left: 7%;
+        top: 465px;
+        font-size: 20px;
+    }
+    
+    .row {
+        display: grid;
+        grid-template-columns: 50% 50%;
         justify-content: center;
     }
-    .logo {
-        flex: 1;
+
+    #title-screen3 {
+        font-size: 20px;
     }
-    li {
-        width: auto;
-        order: 1;
-        display: block;
+
+    #stats {
+        width: 90%;
+        margin: 0% 5% 0% 5%;
     }
-    .toggle {
-        order: 1;
+
+    #text-stats {
+        font-size: 16px;
+        margin: 15px 8px 15px 8px;
     }
-    .item.button.principal {
-        background: transparent;
-        cursor: pointer;
+
+    #text-footer {
+        font-size: 14px;
     }
-    .button.principal {
-        padding: 7px 30px;
-        background: teal;
-        border: 2px solid #06DAF6;
-        background: transparent;
-        border-radius: 9px;
-        cursor: pointer;
+
+    #btn-back {
+        width: 55px;
+        height: 55px;
+        margin: 0% 0% 2% 0%;
     }
-    .button.principal:hover {
-        background: #06DAF6;
+
+}
+
+/* Responsive mobile*/
+
+@media screen and (max-width: 500px) {
+    
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+    
+    .row div {
+        padding: 0.5em;
+    }
+    #image-league {
+        top: 230px;
+        left: 4%;
+    }
+    
+    #initial-text {
+        left: 8%;
+        top: 360px;
+        width: 280px;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    #btnData {
+        left: 7%;
+        top: 490px;
+        margin: 0% 30% 0% 0%; 
+    }
+
+    #title-screen3 {
+        font-size: 14px;
+        margin: 15px 0px 20px 0px;
+    }
+
+    #miChart {
+        width: 300px;
+        height: 600px;
+    }
+
+    #text-stats {
+        font-size: 12px;
+        margin: 20px 5px 20px 5px;
+    }
+
+    #btn-back {
+        width: 40px;
+        height: 40px;
+        margin: 0% 0% 2% 0%;
+    }
+      
 }
 
 
-/* Dispositivo Tablet*/
 
-@media screen and (min-width: 768px) {
-    .item {
-        display: block;
-        width: auto;
-    }
-    .toggle {
-        display: none;
-    }
-    .logo {
-        order: 0;
-    }
-    .item {
-        order: 1;
-    }
-}
+
+
+
+
+
+
+
+
