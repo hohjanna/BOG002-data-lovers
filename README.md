@@ -1,4 +1,4 @@
-# League of Legends
+# League of Legends - Champions
 
 ## Índice
 
@@ -34,7 +34,7 @@ El paso a paso para entender nuestro target:
 
 * **Tercero:** Hacer tangible a nuestro usuario
 
-<p align = "center"> <img src="/ImagenesReadme/DefinicionUsuarios.jpg"></p> 
+<p align = "center"> <img src="https://github.com/hohjanna/BOG002-data-lovers/blob/main/src/ImagenesReadme/DefinicionUsuarios.jpg"></p> 
   
 
 ## 3. Historias de usuario
@@ -58,17 +58,17 @@ El paso a paso para entender nuestro target:
 
 * Ya con nuestros usuarios identificados y nuestras historias desarrolladas, empezamos a bocetar varias propuestas. Teníamos 2 versiones para la pantalla donde se visualizaban todos los campeones pero gracias a la iteración con usuarios reales nos quedamos con la versión B.
 
-<p align = "center"> <img src="/ImagenesReadme/BocetosDigitales.jpg"></p>
+<p align = "center"> <img src="https://github.com/hohjanna/BOG002-data-lovers/blob/main/src/ImagenesReadme/BocetosDigitales.jpg"></p>
 
 * Después de varias iteraciones, pasamos a tener nuestro prototipo en baja con más detalles para guiarnos y siempre teniendo a la mano nuestras historias de usuario. El prototipo se realizó con la herramienta Figma.
 
-<p align = "center"> <img src="/ImagenesReadme/PrototipoBaja.png"></p>
+<p align = "center"> <img src="https://github.com/hohjanna/BOG002-data-lovers/blob/main/src/ImagenesReadme/PrototipoBaja.png"></p>
 
-[Enlace prototipo Figma.](https://www.figma.com/file/cMebARZeoOW9RcPAYjrjwp/League-of--legends?node-id=0%3A1)
+[Enlace prototipo Figma](https://www.figma.com/file/cMebARZeoOW9RcPAYjrjwp/League-of--legends?node-id=0%3A1)
 
 * Por último nos quedaba trabajar en el prototipo en alta. El cual le agregamos la parte cromática y se definió botones, tipografía. Tomamos como referencia en cuanto a la paleta de color el sitio oficial de Lol para no romper con el estilo que es muy marcado dentro de la comunidad de Lol.
 
-<p align = "center"> <img src="/ImagenesReadme/PrototipoAlta.jpg"></p>
+<p align = "center"> <img src="https://github.com/hohjanna/BOG002-data-lovers/blob/main/src/ImagenesReadme/PrototipoAlta.jpg"></p>
 
 
 ## 5. Planeación
@@ -76,7 +76,7 @@ El paso a paso para entender nuestro target:
 Fue fundamental apoyarnos con la herramienta **Trello**. Inicialmente montamos todas las historias de usuario y por cada una escribimos los criterios de aceptación juntos con los de terminado. Cada historia la desglosamos en múltiples tareas concretas lo cual nos permitió avanzar de una manera mucho más organizada.
 
 Nuestro tablero de Trello:
-<p align = "center"> <img src="/ImagenesReadme/Trello.png"></p>
+<p align = "center"> <img src="https://github.com/hohjanna/BOG002-data-lovers/blob/main/src/ImagenesReadme/Trello.png"></p>
 
 
 ## 6. Mejoras del producto
@@ -91,7 +91,7 @@ Nuestro tablero de Trello:
 * Coverage 100%
 Los resultados obtenidos de testing son:
 
-<p align = "center"> <img src="/ImagenesReadme/CoverageTest.jpg"></p>
+<p align = "center"> <img src="https://github.com/hohjanna/BOG002-data-lovers/blob/main/src/ImagenesReadme/CoverageTest.jpg"></p>
 
 
 ## 8. Aprendizajes
